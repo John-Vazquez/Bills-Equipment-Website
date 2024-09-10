@@ -1,10 +1,25 @@
 List of Items that need to be updated before launch
 
 
-1. Updated services image
-
-2. Impliment all other pages.
+1. Find an use better images. (Some images will come directly from the company)
 
 3. Create more of a catalog system instead of a cart system at first. cart will be implimented later
 
-4. 
+4.Images need to be High res and larger for website to have even looking boxes on the homepage
+
+5. Create styling for about page
+
+6. create styling and look for the services page
+
+7. create styling and look for the products page
+
+8. create styling and look for the rental page
+
+9. Attempt to bring the website to the top of the homepage
+
+10. help them find and maintain a good domain name and hosting
+
+11. Keep in mind only Scissor lifts will be being rented, so there is no need to design a Item list on that page
+    only an inventory of the brands and then the types inside of that will be needed.
+
+    
