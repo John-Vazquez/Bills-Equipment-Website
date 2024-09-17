@@ -30,3 +30,31 @@
             </ul>
         </nav>
     </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search items..." />
+        <button onclick="searchItems()">Search</button>
+    </div>
+    
+    <style>
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #search-input {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 16px;
+            margin-left: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>

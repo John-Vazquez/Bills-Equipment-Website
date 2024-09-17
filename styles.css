@@ -1,3 +1,4 @@
+/* Original global styles for other pages */
 body {
     margin: 0;
     padding: 0;
@@ -15,7 +16,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.4); /* background shading */
+    background-color: rgba(128, 128, 128, 0.4);
     z-index: -1;
 }
 
@@ -72,16 +73,16 @@ header nav ul li a:hover::after {
     transform-origin: left; 
 }
 
-main.content{
+main.content {
     padding: 50px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Light background to stand out */
+    background-color: rgba(255, 255, 255, 0.8);
     color: #000; 
-    margin-top: 20px; /* Space it nicely below the navbar */
+    margin-top: 20px;
 }
 
 #scroll-arrow {
-    margin-right:150px;
+    margin-right: 150px;
     font-size: 90px;
     color: #fff;
     cursor: pointer;
@@ -90,7 +91,6 @@ main.content{
     opacity: 1;
     transition: opacity 0.3s ease;
 }
-
 
 .main-content h2 {
     font-family: 'Montserrat', sans-serif;
@@ -102,10 +102,10 @@ main.content{
 }
 
 .main-content p {
-    margin-left:40px;
+    margin-left: 40px;
     max-width: 600px; 
     word-wrap: break-word;
-    color:white;
+    color: white;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
@@ -116,8 +116,8 @@ main.content{
     justify-content: space-around;
     padding: 50px 20px;
     background-color: #fff;
-    margin-top:100px;
-    flex-wrap:wrap;
+    margin-top: 100px;
+    flex-wrap: wrap;
 }
 
 .secondary-content-box {
@@ -129,13 +129,12 @@ main.content{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.secondary-content-box img { /* image inside the three boxes */
+.secondary-content-box img { 
     border-radius: 10px;
     max-height: 210px;  
     max-width: 450px;
     width: 100%;
     height: auto;
-
 }
 
 .secondary-content-box h3 {
@@ -160,4 +159,102 @@ main.content{
 
 .secondary-content-box a:hover {
     background-color: #ffc107;
+}
+
+
+/* ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+ ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
+*/
+
+.about-us-mainText {
+    padding-top: 100px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US
+CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US
+CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US
+CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US
+CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US
+*/
+
+.contact-page #contact-message {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+.contact-page #contact-message p {
+    font-size: 20px;
+    color: white;
+}
+
+.contact-page .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-page #contact-info, 
+.contact-page #contact-us {
+    flex: 1;
+    padding: 40px;
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 10px;
+    color: white;
+}
+
+.contact-page #contact-info h2, 
+.contact-page #contact-us h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 80px;
+    color: white;
+}
+
+.contact-page #contact-info p {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 2.5;
+    color: white;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+.contact-page input, 
+.contact-page textarea {
+    padding: 10px;
+    background-color: rgba(85, 85, 85, 0.8);
+    color: white;
+    border: 1px solid #666;
+}
+
+.contact-page button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
