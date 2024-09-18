@@ -22,10 +22,3 @@ List of Items that need to be updated before launch
 11. Keep in mind only Scissor lifts will be being rented, so there is no need to design a Item list on that page
     only an inventory of the brands and then the types inside of that will be needed.
 
-
-
-
-    
-12. testing
-
-14. commiting directly to master
