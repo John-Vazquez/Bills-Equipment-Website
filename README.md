@@ -1,6 +1,15 @@
 # Bills Equipment Website
 Bills Equipment Website, repo for use by team from UI/UX class
 
+## Important Links
+
+* [Old Website](https://billsequipment.mydomain.com/index.htm)
+* [New Website](https://john-vazquez.github.io/Bills-Equipment-Website/)
+
+## Example Websites
+
+* [One Choice Logistics](https://onechoicelogistics.net/)
+
 ## Things to work on
 
 * Find and use better images. (Some images will come directly from the company) Upscaling with machine learning models may help.
