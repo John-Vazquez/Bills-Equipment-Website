@@ -26,3 +26,6 @@ List of Items that need to be updated before launch
 
 
     
+12. testing
+
+14. commiting directly to master
