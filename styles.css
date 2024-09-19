@@ -9,6 +9,12 @@ body {
     background-repeat: no-repeat;
 }
 
+/*Montserrat Font onto all tags (probably)*/
+body, h1, h2, h3, h4, h5, h6, p, a, li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -16,7 +22,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: rgba(0, 0, 0, 0.45);
     z-index: -1;
 }
 
@@ -133,8 +139,9 @@ main.content {
     border-radius: 10px;
     max-height: 210px;  
     max-width: 450px;
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 500px;
+    
 }
 
 .secondary-content-box h3 {
@@ -257,4 +264,74 @@ CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CON
     color: white;
     border: none;
     cursor: pointer;
+}
+
+
+ /* Responsive design for mobile viewing*/
+ @media screen and (max-width: 1272px) {
+    body {
+        background-attachment: fixed;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 10px auto;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    
+    .main-content h2 {
+        margin-left: 20px;
+        margin-top: 50px;
+        font-size: 28px;
+    }
+
+    .main-content p {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    #scroll-arrow {
+        margin-right: 20px;
+        font-size: 60px;
+        margin-top: -80px;
+    }
+
+    .secondary-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondary-content-box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .about-us-mainText {
+        padding-top: 50px;
+        font-size: 24px;
+    }
+
+    .contact-page .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-page #contact-info,
+    .contact-page #contact-us {
+        width: 90%;
+        margin: 0 auto 20px;
+    }
 }
