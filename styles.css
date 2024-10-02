@@ -20,10 +20,9 @@ body::before {
     z-index: -1;
 }
 
-/* logo */
 .logo { 
-    height: 200px;
-    width: auto;
+    height: 110px; 
+    width: auto; 
     margin-top: 10px;
     margin-left: 30px;
 }
@@ -42,7 +41,7 @@ header nav ul {
     padding: 0;
     align-items: center;
     margin-left: 500px; 
-    margin-top: -300px; 
+    margin-top: -95px; 
 }
 
 header nav ul li {
@@ -52,15 +51,8 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #000; 
+    color: #fff; 
     position: relative;
-}
-
-/*black horizontal line underneath navigation links */
-ul {
-    width: 650px;
-    border-bottom: 3px solid black;
-    padding-bottom: 10px;
 }
 
 header nav ul li a::after {
@@ -103,13 +95,10 @@ main.content {
 .main-content h2 {
     font-family: 'Montserrat', sans-serif;
     margin-left: 40px;
-    margin-top: 145px;
-    font-size: 50px;
-    position: relative;
-    top: -100px;
+    margin-top: 220px;
+    font-size: 36px;
     color: white;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .main-content p {
@@ -126,18 +115,18 @@ main.content {
     display: flex;
     justify-content: space-around;
     padding: 50px 20px;
-    background-color:#f2f0ef;
+    background-color: #fff;
     margin-top: 100px;
     flex-wrap: wrap;
 }
 
 .secondary-content-box {
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
+    text-align: center;
     width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
 }
 
 .secondary-content-box img { 
@@ -151,23 +140,27 @@ main.content {
 .secondary-content-box h3 {
     font-size: 24px;
     margin: 20px 0 10px;
-    text-align: left;
 }
 
 .secondary-content-box p {
     font-size: 16px;
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .secondary-content-box a {
     display: inline-block;
-    color: #A9A9A9;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #000;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    text-decoration: underline;
 }
+
+.secondary-content-box a:hover {
+    background-color: #ffc107;
+}
+
 
 /* ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
  ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US ABOUT-US
