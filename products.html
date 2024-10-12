@@ -13,8 +13,8 @@
     <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
 
 </head>
-<body>
-    <header>
+<body id = "products">
+    <header class = "title">
         <a href="index.html"><img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo"></a>
         
 
@@ -29,32 +29,47 @@
 
             </ul>
         </nav>
+        <h1> Products </h1>
     </header>
-
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search items..." />
-        <button onclick="searchItems()">Search</button>
-    </div>
+</body>
     
-    <style>
-        .search-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        #search-input {
-            padding: 8px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            padding: 8px 16px;
-            margin-left: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+<div class="content-wrapper">
+    <div class="filters-and-products">
+        <aside class="filters">
+            <h3>Keywords</h3>
+                <div class="tag">
+                    Machinery <span class="close">&times;</span>
+                </div>
+                <div class="tag">
+                    Electric <span class="close">&times;</span>
+                </div>
+                <div class="tag">
+                    Generators <span class="close">&times;</span>
+                </div>
+            
+            <h4>Brand</h4>
+                <label><input type="checkbox" checked> Brand </label><br>
+                <p> Multiquip </p>
+                <label><input type="checkbox" checked> Portable</label><br>
+                <p> Wheels or fold-up</p>
+                <label><input type="checkbox" checked> Label </label><br>
+                <p> Description </p>
+
+            <h4>Price</h4> 
+            <input type="range" min="0" max="900" value="0"><br>
+            <h4> Color </h4>
+                <label id="color"><input type="checkbox" checked> Label </label><br>
+                <label><input type="checkbox"> Label </label><br>
+                <label><input type="checkbox"> Label </label><br>
+            <h4> Size </h4>
+                <label><input type="checkbox" checked> Heavy Duty</label><br>
+                <label><input type="checkbox"> Regular</label><br>
+                <label><input type="checkbox"> Small project</label><br>
+            </aside>
+            
+            <div class= "search">
+                <input type="text" id="search-input" placeholder="Search" />
+            </div>
+        </aside>
+    </div>
+</div>

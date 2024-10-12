@@ -279,3 +279,125 @@ CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CONTACT-US CON
     border: none;
     cursor: pointer;
 }
+
+/* Rentals Page */
+#rentals {
+    margin: 0;
+    padding: 0;
+    background-image: url('Main Images/images.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+
+.title h1 {
+    color: white;
+    font-size: 3rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.content-wrapper {
+    background-color: white;
+    min-height: 70vh;
+}
+
+.filters-and-products {
+    display: flex;
+    padding: 20px;
+}
+
+.filters {
+    width: 15%;
+    padding: 20px;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+}
+
+.filters h3, .filters h4 {
+    margin-bottom: 10px;
+}
+
+.filters ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.filters li {
+    margin-bottom: 5px;
+}
+
+.products-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+input[type="checkbox"], input[type="range"] {
+    accent-color: black;
+}
+
+.tag {
+    width: fit-content;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f2f0ef;
+    border-radius: 10px;
+}
+
+p {
+    color: #808080;
+    text-indent: 24px;
+}
+
+/* Search */
+#search-input {
+    margin-left: 50px;
+    padding: 12px;
+    width: 235px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .search img {
+    width: 20px;
+    height: 20px;
+  }
+
+/* Products Page */
+#products {
+    margin: 0;
+    padding: 0;
+    background-image: url('Main Images/images_4.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    background-repeat: no-repeat;
+}
