@@ -13,20 +13,67 @@
     <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
 
 </head>
-<body>
-    <header>
+<body id = "rentals">
+    <header class = "title">
         <a href="index.html"><img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo"></a>
         
-
         <nav> <!-- MAIN NAVIATION BAR-->
             <ul>
-                <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="rentals.html">Rentals</a></li>
             <li><a href="contact.html">Contact</a></li>
-
             </ul>
         </nav>
+        <h1> Rentals </h1>
     </header>
+
+    <div class="content-wrapper">
+        <div class="filters-and-products">
+            <aside class="filters">
+                
+                <h3>Keywords</h3>
+                <div class="tag">
+                    Machinery <span class="close">&times;</span>
+                </div>
+                <div class="tag">
+                    Electric <span class="close">&times;</span>
+                </div>
+                <div class="tag">
+                    Generators <span class="close">&times;</span>
+                </div>
+            
+            <h4>Brand</h4>
+                <label><input type="checkbox" checked> Brand </label><br>
+                <p> Multiquip </p>
+                <label><input type="checkbox" checked> Portable</label><br>
+                <p> Wheels or fold-up</p>
+                <label><input type="checkbox" checked> Label </label><br>
+                <p> Description </p>
+
+            <h4>Price</h4> 
+            <input type="range" min="0" max="900" value="0"><br>
+            <h4> Color </h4>
+                <label id="color"><input type="checkbox" checked> Label </label><br>
+                <label><input type="checkbox"> Label </label><br>
+                <label><input type="checkbox"> Label </label><br>
+            <h4> Size </h4>
+                <label><input type="checkbox" checked> Heavy Duty</label><br>
+                <label><input type="checkbox"> Regular</label><br>
+                <label><input type="checkbox"> Small project</label><br>
+            </aside>
+            
+            <div class= "search">
+                <input type="text" id="search-input" placeholder="Search" />
+            </div>
+
+            <div class = "items">
+
+            </div>
+
+        </div>
+    </div>
+    
+</body>
