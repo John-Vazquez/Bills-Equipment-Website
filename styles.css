@@ -402,7 +402,7 @@ p {
     text-align: center;
     position: relative;
     height: 30px;
-    right: -140px;
+    right: -300px;
     bottom: -15px;
     gap: 10px;
 }
@@ -430,8 +430,8 @@ p {
     border-radius: 7px;
     position: relative;
     height: 300px;
-    width: 200px;
-    left: 295px;
+    width: 240px;
+    left: 320px;
     top: -560px;
 }
 
@@ -447,8 +447,8 @@ p {
     border-radius: 7px;
     position: relative;
     height: 280px;
-    width: 425px;
-    left: 295px;
+    width: 505px;
+    left: 320px;
     bottom: 540px;
 }
 
