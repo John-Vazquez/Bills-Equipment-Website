@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bills Equipment</title>
     <link rel="stylesheet" href="styles.css">
-
+    <script type = "text/javascript" src="scripts.js"></script>
     <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,14 +66,59 @@
             </aside>
             
             <div class= "search">
-                <input type="text" id="search-input" placeholder="Search" />
+                <input type="text" id="search-input" placeholder="Search"/>
+                <button type = "submit" class = "search button">
+                    <img src = "Main Images/search.png" alt = "Error Loading Search" class = "search">
+                </button>
             </div>
 
-            <div class = "items">
-
+            <div class="flex-container">
+                <button class="toggle-button" onclick="buttonClicked(this)"> Relevant </button>
+                <button class="toggle-button" onclick="buttonClicked(this)"> Price ascending </button>
+                <button class="toggle-button" onclick="buttonClicked(this)"> Price descending </button>
+                <button class="toggle-button" onclick="buttonClicked(this)"> Rating </button>
             </div>
 
         </div>
+        
+        <div class="items-container-wrapper">
+            <a href="rentalDesc.html">
+                <div class="items-container">
+                    
+                </div>
+            </a>
+            <a href="rentalDesc.html">
+                <div class="items-container">
+                    
+                </div>
+            </a>
+            <a href="rentalDesc.html">
+                <div class="items-container">
+        
+                </div>
+            </a>
+            <a href="rentalDesc.html">
+                <div class="items-container">
+                    
+                </div>
+            </a>
+        </div>
+
+        <div class = "bigItems-container-wrapper">
+            <a href="rentalDesc.html">
+                <div class = "bigItems-container">
+
+                </div>
+            </a>
+            <a href="rentalDesc.html">
+                <div class = "bigItems-container">
+                    
+                </div>
+            </a>
+        </div>
+
+        </div>
+    
     </div>
     
 </body>
