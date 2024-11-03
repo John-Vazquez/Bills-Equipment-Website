@@ -35,14 +35,14 @@
             <aside class="filters">
                 
                 <h3>Keywords</h3>
-                <div class="tag">
-                    Machinery <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Machinery <span class="close"></span>
                 </div>
-                <div class="tag">
-                    Electric <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Electric <span class="close"></span>
                 </div>
-                <div class="tag">
-                    Generators <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Generators <span class="close"></span>
                 </div>
             
             <h4>Brand</h4>
@@ -54,7 +54,7 @@
                 <p> Description </p>
 
             <h4>Price</h4> 
-            <input type="range" min="0" max="900" value="0"><br>
+                <input type="range" min="0" max="900" value="0"><br>
             <h4> Color </h4>
                 <label id="color"><input type="checkbox" checked> Label </label><br>
                 <label><input type="checkbox"> Label </label><br>
@@ -73,10 +73,10 @@
             </div>
 
             <div class="flex-container">
-                <button class="toggle-button" onclick="buttonClicked(this)"> Relevant </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Price ascending </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Price descending </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Rating </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Relevant </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Price ascending </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Price descending </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Rating </button>
             </div>
 
         </div>
