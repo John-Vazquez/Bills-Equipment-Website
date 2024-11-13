@@ -43,3 +43,25 @@ function buttonKeywords(button) {
     else
         button.innerHTML += " ×";
 }
+
+// slider function handles the price range slider
+function slider() {
+    const rangeInput = document.querySelectorAll(".range-input input");
+    const progress = document.querySelector(".slider .progress");
+
+    progress.style.display = 'none';
+
+    rangeInput.forEach((input) => {
+        input.addEventListener("input", e => {
+            let minVal = parseInt(rangeInput[0].value);
+            let maxVal = parseInt(rangeInput[1].value);
+
+            progress.style.display = 'block';
+
+            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        });
+    });
+
+}
+slider();

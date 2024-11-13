@@ -243,6 +243,13 @@ header nav ul li a:hover::after {
 	margin-bottom: 0.5vw;
 }
 
+.filters h3 {
+    font-size: 1.3vw;
+}
+
+.filters h4 {
+    font-size: 1.1vw;
+}
 .filters ul {
 	list-style: none;
 	padding-left: 0;
@@ -277,9 +284,63 @@ header nav ul li a:hover::after {
 	margin: 5px 0;
 }
 
+.slider {
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    width: 90%;
+    position: relative;
+}
+
+.slider .progress {
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: black;
+    
+}
+.progress {
+    display: none;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-input input {
+    position: absolute;
+    right: 1.25vw;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    background: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 2.4vh;
+    width: 2.4vh;
+    border-radius: 50%;
+    background: black;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 input[type="checkbox"],
 input[type="range"] {
 	accent-color: black;
+}
+
+input[type="checkbox"] {
+    width: 7%;
+}
+input[type="range"] {
+    width: 90%;
 }
 
 .tag {
@@ -288,11 +349,18 @@ input[type="range"] {
 	margin-bottom: 0.5rem;
 	background-color: #f2f0ef;
 	border-radius: 10px;
+    font-size: 1.1vw;
 }
 
 p {
-	color: #808080;
+    font-size: 1.1vw;
+    color: #808080;
     text-indent: 1.69vw;
+}
+
+label {
+    font-size: 1.1vw;
+    width: 100%
 }
 
 /* Search */

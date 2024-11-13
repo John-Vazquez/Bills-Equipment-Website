@@ -34,7 +34,7 @@
     
     <div class="content-wrapper">
         <div class="filters-and-products">
-            <aside class="filters">
+            <div class="filters">
                 <h3>Keywords</h3>
                     <div class="tag" onclick="buttonKeywords(this)">
                         Machinery <span class="close"></span>
@@ -54,8 +54,18 @@
                     <label><input type="checkbox" checked> Label </label><br>
                     <p> Description </p>
 
-                <h4>Price</h4> 
-                <input type="range" min="0" max="900" value="0"><br>
+                <!-- Price Range Slider -->
+                <h4>Price</h4>
+                <div class = "slider">
+                    <div class = "progress"></div>
+                </div>
+                <div class = "range-input">
+                    <input type="range" min="0" max="3900" value="0">
+                    <input type="range" min="0" max="3900" value="3900">
+                </div>
+
+                <script src="scripts.js"></script>
+
                 <h4> Color </h4>
                     <label id="color"><input type="checkbox" checked> Label </label><br>
                     <label><input type="checkbox"> Label </label><br>
@@ -64,14 +74,17 @@
                     <label><input type="checkbox" checked> Heavy Duty</label><br>
                     <label><input type="checkbox"> Regular</label><br>
                     <label><input type="checkbox"> Small project</label><br>
-                </aside>
+                </div>
             
+                <!-- Search Bar -->
+            <form>
                 <div class= "search">
                     <input type="text" id="search-input" placeholder="Search"/>
                     <button type = "submit" class = "search button">
                         <img src = "Main Images/search.png" alt = "Error Loading Search" class = "search">
                     </button>
                 </div>
+            </form>
 
                 <div class="flex-container">
                     <button class=".flex-container button" onclick="buttonClicked(this)"> Relevant </button>
