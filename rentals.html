@@ -31,21 +31,24 @@
     </header>
 
     <div class="content-wrapper">
+
+        <!-- Keywords Contianer -->
         <div class="filters-and-products">
-            <aside class="filters">
+            <div class="filters">
                 
+                <!-- Keyword Buttons -->
                 <h3>Keywords</h3>
-                <div class="tag">
-                    Machinery <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Machinery <span class="close"></span>
                 </div>
-                <div class="tag">
-                    Electric <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Electric <span class="close"></span>
                 </div>
-                <div class="tag">
-                    Generators <span class="close">&times;</span>
+                <div class="tag" onclick="buttonKeywords(this)">
+                    Generators <span class="close"></span>
                 </div>
-            
-            <h4>Brand</h4>
+              
+                <h4>Brand</h4>
                 <label><input type="checkbox" checked> Brand </label><br>
                 <p> Multiquip </p>
                 <label><input type="checkbox" checked> Portable</label><br>
@@ -53,34 +56,50 @@
                 <label><input type="checkbox" checked> Label </label><br>
                 <p> Description </p>
 
-            <h4>Price</h4> 
-            <input type="range" min="0" max="900" value="0"><br>
-            <h4> Color </h4>
+                <!-- Price Range Slider -->
+                <h4>Price</h4>
+                <div class = "slider">
+                    <div class = "progress"></div>
+                </div>
+                <div class = "range-input">
+                    <input type="range" min="0" max="3900" value="0">
+                    <input type="range" min="0" max="3900" value="3900">
+                </div>
+
+                <script src="scripts.js"></script>
+
+                <h4> Color </h4>
                 <label id="color"><input type="checkbox" checked> Label </label><br>
                 <label><input type="checkbox"> Label </label><br>
                 <label><input type="checkbox"> Label </label><br>
-            <h4> Size </h4>
+
+                <h4> Size </h4>
                 <label><input type="checkbox" checked> Heavy Duty</label><br>
                 <label><input type="checkbox"> Regular</label><br>
                 <label><input type="checkbox"> Small project</label><br>
-            </aside>
-            
-            <div class= "search">
-                <input type="text" id="search-input" placeholder="Search"/>
-                <button type = "submit" class = "search button">
-                    <img src = "Main Images/search.png" alt = "Error Loading Search" class = "search">
-                </button>
             </div>
 
+            <!-- Search Bar -->
+            <form>
+                <div class= "search">
+                    <input type="text" id="search-input" placeholder="Search"/>
+                    <button type = "submit" class = "search button">
+                        <img src = "Main Images/search.png" alt = "Error Loading Search" class = "search">
+                    </button>
+                </div>
+            </form>
+
+            <!-- Sorting Buttons -->
             <div class="flex-container">
-                <button class="toggle-button" onclick="buttonClicked(this)"> Relevant </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Price ascending </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Price descending </button>
-                <button class="toggle-button" onclick="buttonClicked(this)"> Rating </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Relevant </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Price ascending </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Price descending </button>
+                <button class=".flex-container button" onclick="buttonClicked(this)"> Rating </button>
             </div>
 
         </div>
         
+        <!-- Smaller Rental Items -->
         <div class="items-container-wrapper">
             <a href="rentalDesc.html">
                 <div class="items-container">
@@ -104,6 +123,7 @@
             </a>
         </div>
 
+        <!-- Bigger Rental Items -->
         <div class = "bigItems-container-wrapper">
             <a href="rentalDesc.html">
                 <div class = "bigItems-container">
