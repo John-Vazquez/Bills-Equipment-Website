@@ -1,0 +1,219 @@
+/* Styling for rentals and products page */
+
+/* Title */
+.title h1 {
+    max-width: 100%;
+	margin: 8vh auto;
+	text-align: center;
+	color: white;
+	font-size: 60px;
+}
+
+/* White background */
+.content-wrapper {
+	background-color: #fffbfb;
+	min-height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.filters-and-products {
+	display: flex;
+	padding: 2vw;
+}
+
+/* Contianer for Keywords */
+/* EVERYTHING UNDERNEATH THIS COMMENT IS INFO INSIDE KEYWORDS CONTAINER */
+.filters {
+	width: 14vw;
+	padding: 1.5vw;
+	border: 1px solid #d3d3d3;
+	border-radius: 10px;
+}
+
+.filters h3,
+.filters h4 {
+	margin-bottom: 0.5vw;
+}
+
+.filters h3 {
+    font-size: 1.3vw;
+}
+
+.filters h4 {
+    font-size: 1.1vw;
+}
+
+.filters ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.filters li {
+	margin-bottom: 5px;
+}
+
+/* Price Slider */
+.slider {
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    width: 90%;
+    position: relative;
+}
+
+/* Slider with Black Progress Bar */
+.slider .progress {
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: black;
+    
+}
+
+/* Hides the progress bar when the page is loaded (before the user interacts with the slider) */
+.progress {
+    display: none;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-input input {
+    position: absolute;
+    right: 1.25vw;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    background: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 2.4vh;
+    width: 2.4vh;
+    border-radius: 50%;
+    background: black;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"],
+input[type="range"] {
+	accent-color: black;
+}
+
+input[type="checkbox"] {
+    width: 7%;
+}
+input[type="range"] {
+    width: 90%;
+}
+
+.tag {
+	width: fit-content;
+    padding: 1vh;
+	margin-bottom: 0.5rem;
+	background-color: #f2f0ef;
+	border-radius: 10px;
+    font-size: 1.1vw;
+}
+
+p {
+    font-size: 1.1vw;
+    color: #808080;
+    text-indent: 1.69vw;
+}
+
+label {
+    font-size: 1.1vw;
+    width: 100%
+}
+/* EVERYTHING ABOVE THIS COMMENT IS INFO INSIDE KEYWORDS CONTAINER */
+
+/* Search */
+#search-input {
+	margin-left: 3.4vw;
+	padding: 10px;
+	width: 18.5vw;
+	border: 1px solid #ccc;
+	border-radius: 60px;
+}
+
+/* Search container */
+.search button {
+	position: relative;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding-top: 1vh;
+	right: 3.5vw;
+	top: 1.5vh;
+}
+
+/* Magnifying glass image */
+.search img {
+	width: 2vw;
+	height: auto;
+	background-image: url("Main Images/search.png");
+}
+
+/* Flexbox for sorting words (relevant, price ascending, price descending, and rating) */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    height: 4.5vh;
+    left: 24vw;
+    margin-bottom: -10vh;
+    gap: 10px;
+}
+
+/* Sorting word buttons (relevant, price ascending, price descending, and rating) */
+.flex-container button {
+    background-color: #f2f0ef;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 7px;
+}
+
+/* Flexboxes for Smaller Items and Bigger Items Container */
+.items-container-wrapper, .bigItems-container-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Smaller Items Container */
+.items-container {
+    background-color: transparent;
+    border: 1px solid #D3D3D3;
+    border-radius: 7px;
+    position: relative;
+    height: 45vh;
+    width: 17.7vw;
+    left: 22.3vw;
+    bottom: 90vh;
+}
+
+/* Bigger Items Container */
+.bigItems-container {
+    background-color: transparent;
+    border: 1px solid #D3D3D3;
+    border-radius: 7px;
+    position: relative;
+    height: 45vh;
+    width: 37vw;
+    left: 22.3vw;
+    bottom: 86vh;
+}
