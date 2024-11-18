@@ -1,136 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bills Equipment</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles/rentals-products.css">
-    <script type = "text/javascript" src="scripts.js"></script>
-    <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bills Equipment</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="styles/rentals-products.css" />
+		<script src="scripts.js"></script>
+		<!-- Google Font: Montserrat Bold 700 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body id="products">
+		<header class="title">
+			<!-- Logo and Navigation Bar -->
+			<a href="index.html">
+				<img src="Main Images/BE Logo.png" alt="Error Loading Logo" class="logo" />
+			</a>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="rentals.html">Rentals</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<h1>Products</h1>
+		</header>
 
-</head>
-<body id = "products">
-    <header class = "title">
-        <a href="index.html"><img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo"></a>
-        
+		<div class="content-wrapper">
+			<div class="filters-and-products">
+				<!-- Filters Section -->
+				<div class="filters">
+					<!-- Keyword Filters (Tags) -->
+					<h3>Keywords</h3>
+					<div class="tag button" onclick="buttonKeywords(this)">
+						Machinery <span class="close"></span>
+					</div>
+					<div class="tag button" onclick="buttonKeywords(this)">
+						Electric <span class="close"></span>
+					</div>
+					<div class="tag button" onclick="buttonKeywords(this)">
+						Generators <span class="close"></span>
+					</div>
 
-        <nav> <!-- MAIN NAVIATION BAR-->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="rentals.html">Rentals</a></li>
-            <li><a href="contact.html">Contact</a></li>
+					<!-- Brand Filters -->
+					<h4>Brand</h4>
+					<label><input type="checkbox" checked /> Multiquip</label><br />
+					<label><input type="checkbox" checked /> Portable</label><br />
+					<label><input type="checkbox" checked /> Wheels or fold-up</label><br />
 
-            </ul>
-        </nav>
-        <h1> Products </h1>
-    </header>
-    
-    <div class="content-wrapper">
-        <div class="filters-and-products">
-            <div class="filters">
-                <h3>Keywords</h3>
-                    <div class="tag" onclick="buttonKeywords(this)">
-                        Machinery <span class="close"></span>
-                    </div>
-                    <div class="tag" onclick="buttonKeywords(this)">
-                        Electric <span class="close"></span>
-                    </div>
-                    <div class="tag" onclick="buttonKeywords(this)">
-                        Generators <span class="close"></span>
-                    </div>
-            
-                <h4>Brand</h4>
-                    <label><input type="checkbox" checked> Brand </label><br>
-                    <p> Multiquip </p>
-                    <label><input type="checkbox" checked> Portable</label><br>
-                    <p> Wheels or fold-up</p>
-                    <label><input type="checkbox" checked> Label </label><br>
-                    <p> Description </p>
+					<!-- Price Range Filter -->
+					<h4>Price</h4>
+					<div class="slider">
+						<div class="progress"></div>
+					</div>
+					<div class="range-input">
+						<input type="range" min="0" max="3900" value="0" />
+						<input type="range" min="0" max="3900" value="3900" />
+					</div>
 
-                <!-- Price Range Slider -->
-                <h4>Price</h4>
-                <div class = "slider">
-                    <div class = "progress"></div>
-                </div>
-                <div class = "range-input">
-                    <input type="range" min="0" max="3900" value="0">
-                    <input type="range" min="0" max="3900" value="3900">
-                </div>
+					<!-- Color Filters -->
+					<h4>Color</h4>
+					<label><input type="checkbox" checked /> Black</label><br />
+					<label><input type="checkbox" /> White</label><br />
+					<label><input type="checkbox" /> Gray</label><br />
 
-                <script src="scripts.js"></script>
+					<!-- Size Filters -->
+					<h4>Size</h4>
+					<label><input type="checkbox" checked /> Heavy Duty</label><br />
+					<label><input type="checkbox" /> Regular</label><br />
+					<label><input type="checkbox" /> Small Project</label><br />
+				</div>
 
-                <h4> Color </h4>
-                    <label id="color"><input type="checkbox" checked> Label </label><br>
-                    <label><input type="checkbox"> Label </label><br>
-                    <label><input type="checkbox"> Label </label><br>
-                <h4> Size </h4>
-                    <label><input type="checkbox" checked> Heavy Duty</label><br>
-                    <label><input type="checkbox"> Regular</label><br>
-                    <label><input type="checkbox"> Small project</label><br>
-                </div>
-            
-                <!-- Search Bar -->
-            <form>
-                <div class= "search">
-                    <input type="text" id="search-input" placeholder="Search"/>
-                    <button type = "submit" class = "search button">
-                        <img src = "Main Images/search.png" alt = "Error Loading Search" class = "search">
-                    </button>
-                </div>
-            </form>
+				<!-- Main Content Section -->
+				<div>
+					<!-- Search Bar and Sorting Options -->
+					<div class="search-and-sorting">
+						<!-- Search Bar -->
+						<div class="search">
+							<input type="text" id="search-input" placeholder="Search..." />
+							<button onclick="searchFunction()">
+								<img src="Main Images/search.png" alt="Search" />
+							</button>
+						</div>
 
-                <div class="flex-container">
-                    <button class=".flex-container button" onclick="buttonClicked(this)"> Relevant </button>
-                    <button class=".flex-container button" onclick="buttonClicked(this)"> Price ascending </button>
-                    <button class=".flex-container button" onclick="buttonClicked(this)"> Price descending </button>
-                    <button class=".flex-container button" onclick="buttonClicked(this)"> Rating </button>
-                </div>
+						<!-- Sorting Buttons -->
+						<div class="flex-container">
+							<button onclick="buttonClicked(this)">Relevant</button>
+							<button onclick="buttonClicked(this)">Price Ascending</button>
+							<button onclick="buttonClicked(this)">Price Descending</button>
+							<button onclick="buttonClicked(this)">Rating</button>
+						</div>
+					</div>
 
-        </div>
-        <div class="items-container-wrapper">
-            <a href="rentalDesc.html">
-                <div class="items-container">
-                    <!-- item content -->
-                </div>
-            </a>
-            <a href="rentalDesc.html">
-                <div class="items-container">
-                    <!-- item content -->
-                </div>
-            </a>
-            <a href="rentalDesc.html">
-                <div class="items-container">
-                    <!-- item content -->
-                </div>
-            </a>
-            <a href="rentalDesc.html">
-                <div class="items-container">
-                    <!-- item content -->
-                </div>
-            </a>
-        </div>
+					<!-- Product Items Section -->
+					<div class="items-container-wrapper">
+						<!-- Links to product detail pages for each item -->
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+						<a href="rentalDesc.html"><div class="items-container"></div></a>
+					</div>
 
-        <div class = "bigItems-container-wrapper">
-            <a href="rentalDesc.html">
-                <div class = "bigItems-container">
-
-                </div>
-            </a>
-            <a href="rentalDesc.html">
-                <div class = "bigItems-container">
-                
-                </div>
-            </a>
-        </div>
-
-        </div>
-
-    </div>
-</body>
+					<!-- Larger Product Items Section -->
+					<div class="bigItems-container-wrapper">
+						<!-- Links to product detail pages for larger items -->
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 	</head>
+
 	<body class="contact-page">
 		<header>
 			<a href="index.html">
@@ -63,6 +64,7 @@
 					<div id="map"></div>
 				</div>
 			</div>
+
 			<!-- Contact Us Form Section -->
 			<div id="contact-us" class="contact-box">
 				<h3>Wire Transfer Information</h3>
@@ -71,7 +73,7 @@
 					phone or email for wire transfer details. We are happy to assist you!
 				</p>
 				<h3>Contact Us</h3>
-				<form action="send_email.php" method="POST">
+				<form id="contact-form">
 					<label for="name">Name:</label>
 					<input
 						type="text"
@@ -111,25 +113,54 @@
 
 					<button type="submit">Submit</button>
 				</form>
+
+				<!-- Thank You Message -->
+				<div id="thank-you-message" class="hidden">
+					<p>
+						Thank you! Your information has been sent, and we'll attend your needs as
+						soon as possible!
+					</p>
+				</div>
 			</div>
 		</section>
 
 		<script>
+			// Map Initialization
 			var markerCoords = [25.8089, -80.3754];
 			var mapCenter = [25.8099, -80.3754];
 			var map = L.map("map").setView(mapCenter, 13);
 
+			// Add the map tiles
 			L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 				attribution:
 					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 			}).addTo(map);
 
+			// Add a marker to the map
 			L.marker(markerCoords)
 				.addTo(map)
 				.bindPopup("Bills Equipment<br>3500 NW 115th Ave, Doral, FL 33178")
 				.openPopup();
 
-			map.invalidateSize();
+			// Ensure the map is correctly sized
+			setTimeout(function () {
+				map.invalidateSize(); // Recalculate map size after the page is loaded
+			}, 500); // Delay to ensure the map container has been properly sized
+
+			// Handle form submission
+			document.getElementById("contact-form").addEventListener("submit", function (e) {
+				e.preventDefault(); // Prevent page reload
+
+				// Hide the form without affecting the layout (Visibility method)
+				const form = document.getElementById("contact-form");
+				form.style.visibility = "hidden"; // Hide the form, keep its space in layout
+
+				// Show the thank you message
+				document.getElementById("thank-you-message").style.display = "block";
+
+				// Reset the form fields
+				document.getElementById("contact-form").reset();
+			});
 		</script>
 	</body>
 </html>
