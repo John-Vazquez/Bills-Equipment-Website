@@ -116,19 +116,15 @@ include 'getProducts.php';
         </div>
     </div>
 
-    <div class = "bigItems-container-wrapper">
-        <a href="rentalDesc.html">
-            <div class = "bigItems-container">
-
-            </div>
-        </a>
-        <a href="rentalDesc.html">
-            <div class = "bigItems-container">
-                
-            </div>
-        </a>
-    </div>
-
-    </div>
-
-</div>
+					<!-- Larger Product Items Section -->
+					<div class="bigItems-container-wrapper">
+						<!-- Links to product detail pages for larger items -->
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+						<a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

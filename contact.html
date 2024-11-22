@@ -1,73 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bills Equipment</title>
-    <link rel="stylesheet" href="styles.css">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bills Equipment</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="styles/contact.css" />
 
-    <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+		<!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet" />
+		<!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
 
-    <!-- Google reCAPTCHA Script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body class="contact-page">
-    <header>
-        <a href="index.html"><img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="rentals.html">Rentals</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+		<!-- Google reCAPTCHA Script -->
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <!-- Introductory Contact Message Section -->
-    <section id="contact-message">
-        <p>Please feel free to contact us at any time using the contact form, our email, or our phone number.</p>
-    </section>
+		<!-- OpenStreetMap Leaflet CSS and JS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	</head>
 
-    <!-- Container for Contact Info and Form -->
-    <section class="contact-container">
-        <!-- Contact Information Section -->
-        <div id="contact-info">
-            <h2>Contact Information</h2>
-            <p>Email: info@billsequipment.com</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Address: 123 Main Street, Anytown, USA</p>
-        </div>
+	<body class="contact-page">
+		<header>
+			<a href="index.html">
+				<img src="Main Images/BE Logo.png" alt="Error Loading Logo" class="logo" />
+			</a>
+			<nav>
+				<!-- MAIN NAVIGATION BAR-->
+				<ul class="border-bottom">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="rentals.html">Rentals</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
 
-        <!-- Contact Us Form Section -->
-        <div id="contact-us">
-            <h2>Contact Us</h2>
-            <form action="send_email.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+		<!-- Introductory Contact Message Section -->
+		<section id="contact-message">
+			<h3>Contact Us</h3>
+		</section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+		<!-- Container for Contact Info and Form -->
+		<section class="contact-secondary-content">
+			<!-- Contact Information Section -->
+			<div id="contact-info" class="contact-box">
+				<h3>Contact Information</h3>
+				<p>
+					You can contact us through our online form, by phone, or via email. If you have
+					any questions or comments for Bills Equipment, please fill out the form below,
+					and we will assist you as soon as possible. Expect top-notch customer service
+					when dealing with Bills Equipment, where we treat you like family.
+				</p>
+				<p>Email: earenas@billsequipment.net</p>
+				<p>Phone: 305-591-3933</p>
+				<p>Fax: 305-593-2936</p>
+				<p>Mailing Address: 3500 NW 115th Ave, Doral, FL 33178</p>
+				<div id="map-container">
+					<div id="map"></div>
+				</div>
+			</div>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+			<!-- Contact Us Form Section -->
+			<div id="contact-us" class="contact-box">
+				<h3>Wire Transfer Information</h3>
+				<p>
+					Bills Equipment offers wire transfer as a payment option. Please contact us by
+					phone or email for wire transfer details. We are happy to assist you!
+				</p>
+				<h3>Contact Us</h3>
+				<form id="contact-form">
+					<label for="name">Name:</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						placeholder="Enter your name"
+						required />
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+					<label for="email">Email:</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Enter your email"
+						required />
 
-                <!-- Google reCAPTCHA Widget -->
-                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+					<label for="phone">Phone Number:</label>
+					<input
+						type="tel"
+						id="phone"
+						name="phone"
+						placeholder="Enter your phone number"
+						required />
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
+					<label for="message">Message:</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="5"
+						placeholder="Enter your message"
+						required></textarea>
 
-</body>
+					<!-- Google reCAPTCHA Widget -->
+					<div class="recaptcha-container">
+						<div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+					</div>
+
+					<button type="submit">Submit</button>
+				</form>
+
+				<!-- Thank You Message -->
+				<div id="thank-you-message" class="hidden">
+					<p>
+						Thank you! Your information has been sent, and we'll attend your needs as
+						soon as possible!
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			// Map Initialization
+			var markerCoords = [25.8089, -80.3754];
+			var mapCenter = [25.8099, -80.3754];
+			var map = L.map("map").setView(mapCenter, 13);
+
+			// Add the map tiles
+			L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+				attribution:
+					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			}).addTo(map);
+
+			// Add a marker to the map
+			L.marker(markerCoords)
+				.addTo(map)
+				.bindPopup("Bills Equipment<br>3500 NW 115th Ave, Doral, FL 33178")
+				.openPopup();
+
+			// Ensure the map is correctly sized
+			setTimeout(function () {
+				map.invalidateSize(); // Recalculate map size after the page is loaded
+			}, 500); // Delay to ensure the map container has been properly sized
+
+			// Handle form submission
+			document.getElementById("contact-form").addEventListener("submit", function (e) {
+				e.preventDefault(); // Prevent page reload
+
+				// Hide the form without affecting the layout (Visibility method)
+				const form = document.getElementById("contact-form");
+				form.style.visibility = "hidden"; // Hide the form, keep its space in layout
+
+				// Show the thank you message
+				document.getElementById("thank-you-message").style.display = "block";
+
+				// Reset the form fields
+				document.getElementById("contact-form").reset();
+			});
+		</script>
+	</body>
 </html>
