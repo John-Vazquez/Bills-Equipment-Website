@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills Equipment</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+
+</head>
+<body>
+    <header>
+        <img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo">
+        
+
+        <nav> <!-- MAIN NAVIATION BAR-->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="rentals.html">Rentals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        PRODUCT LIST
+    </header>
+    <main>
+        <section class="cart">
+          <h1>Shopping Cart</h1>
+          <div class="cart-contents">
+            <p>Your Shopping Cart is Empty!</p>
+            <p>Visit our Products or Rental page to browse items</p>
+          </div>
+    
+          <div class="checkout">
+            <h2>Checkout</h2>
+            <form>
+              <label for="subtotal">Subtotal (0 items):</label>
+              <input type="text" id="subtotal" value="$0" readonly>
+    
+              <label for="tax">Tax:</label>
+              <input type="text" id="tax" value="$0" readonly>
+    
+              <label for="total">Estimated Total:</label>
+              <input type="text" id="total" value="$0" readonly>
+    
+              <button type="button">Checkout All Items</button>
+            </form>
+          </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 Bills Equipment & Rentals</p>
+    </footer>
+
+
+
+</body>
+</html>

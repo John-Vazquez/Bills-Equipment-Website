@@ -6,14 +6,19 @@
     <title>Bills Equipment</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
+    <!-- START OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)--> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <!-- END OF LINKS FOR GOOGLE FONT (MONTSERRAT BOLD700)-->
 
 </head>
-<body id = "products">
+<!-- <body id = "products"> -->
+<body>
+<?php
+// Include the PHP script that connects to the database and retrieves data
+include 'getProducts.php';
+?>
     <header class = "title">
         <a href="index.html"><img src = "Main Images/BE Logo.png" alt = "Error Loading Logo" class = "logo"></a>
         
@@ -81,26 +86,34 @@
             </div>
     </div>
     <div class="items-container-wrapper">
-        <a href="rentalDesc.html">
-            <div class="items-container">
-                <!-- item content -->
-            </div>
-        </a>
-        <a href="rentalDesc.html">
-            <div class="items-container">
-                <!-- item content -->
-            </div>
-        </a>
-        <a href="rentalDesc.html">
-            <div class="items-container">
-                <!-- item content -->
-            </div>
-        </a>
-        <a href="rentalDesc.html">
-            <div class="items-container">
-                <!-- item content -->
-            </div>
-        </a>
+        
+            <?php
+                $products = fetchProducts();
+                // Check if there are products
+                if (!empty($products)) 
+                {
+                    foreach ($products as $product) 
+                    {
+                        // Display each product in a structured format
+                        ?>
+
+                        <a href="rentalDesc.html">
+                            <div class="items-container">
+                                <<h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
+                                <img src="<?php echo htmlspecialchars($product['ProductImage']); ?>" alt="Product Image" id="product-image">
+                                <p>PRICE: <?php echo $product["ProductPrice"]; ?></p>
+                                <p><?php echo htmlspecialchars($product['ProductDescription']); ?></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                } else 
+                {
+                    // If no products found
+                    echo "<p>No products available.</p>";
+                }
+            ?>
+        </div>
     </div>
 
     <div class = "bigItems-container-wrapper">
