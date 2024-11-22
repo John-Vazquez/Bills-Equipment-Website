@@ -1,0 +1,45 @@
+/* Styling for the about us page */
+
+/* Title */
+.title h1 {
+	max-width: 100%;
+	margin: 8vh auto;
+	text-align: center;
+	color: white;
+	font-size: clamp(2.8vh, 3.6vh, 4.3vh);
+}
+
+/* White Background */
+.content-wrapper {
+	background-color: #fffbfb;
+	min-height: 100vh;
+	width: 100vw;
+	overflow-y: auto;
+}
+
+/* Flex Box for About Us Description */
+.about-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    
+}
+
+/* About Us Description */
+.about-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 4vh;
+    color: #333;
+    padding: 0 1vh;
+}
+
+/* About Us Image */
+.about-image-box {
+    display: flex;
+    justify-content: center;
+    padding: 2vh;
+}
