@@ -1,0 +1,172 @@
+/* Styling for the rental desc and products desc page */
+
+/* Title */
+.title h1 {
+	max-width: 100%;
+	margin: 8vh auto;
+	text-align: center;
+	color: white;
+	font-size: clamp(2.8vh, 3.6vh, 4.3vh);
+}
+
+/* White Background */
+.content-wrapper {
+	background-color: #fffbfb;
+	min-height: 100vh;
+	width: 100vw;
+	overflow-y: auto;
+}
+
+/* Flex Box Container for Item and Keywords */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+    padding: 2vh 2vw;
+    margin-top: 5vh;
+}
+
+/* Flex Box for Item */
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3vh;
+    background-color: white;
+    width: 65%;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: 3%;
+    margin-top: 8%;
+    box-shadow: var(--box-shadow);
+    border-radius: 1%;
+}
+
+/* Flex Box for Keywords */
+.keywords {
+    padding: 3vh;
+    background-color: white;
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: 3%;
+    margin-top: 3%;
+    box-shadow: var(--box-shadow);
+    border-radius: 2%;
+}
+
+/* Go back to search (rentals page) link */
+.search {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-decoration: none;
+    margin-left: 7%;
+}
+
+/* Content inside of the Keywords Flex Box */
+.content {
+    margin-bottom: 3vh;
+}
+
+.keywords .content {
+    width: 100%;
+    margin-top: 0; /* Remove any extra margin at the top */
+    overflow-wrap: break-word; /* Ensure no text overflows */
+}
+
+.keywords .content p {
+    margin-bottom: 0.5vh; /* Adjust spacing below Search */
+}
+
+.keywords .content h3 {
+    margin-top: 0.5vh; /* Adjust spacing above Rentals */
+}
+
+/* Horizontal Line Inside of Keywords Flex Box */
+hr {
+    background-color: lightgrey; 
+    width: auto;
+}
+
+/* Star Icon */
+.star-item {
+    display: flex; /* Arrange all children in a row */
+    align-items: center; /* Vertically align items */
+    gap: 0.5rem; /* Space between items */
+    margin-bottom: 0.5rem; /* Add space between star items */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Paragraph for the Star Icon */
+.star-item p {
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-wrap: normal; /* Ensure normal word-breaking behavior */
+}
+
+/* Back Arrow for Search (Rentals Page) */
+.arrow-back {
+    display: flex;
+    align-items: center;
+}
+
+/* Spacing Between Star Icon and Paragraph */
+.star-item + p {
+    margin-top: 0.2rem; /* Reduce the space above the paragraph */
+    margin-bottom: 0; /* Ensure no extra spacing below the paragraph */
+    line-height: 1; /* Adjust line height if needed for closer text */
+    font-size: 0.9rem; /* Optionally reduce font size for tighter layout */
+    color: darkgrey; /* Keep consistent styling for text */
+    text-indent: 13%;
+}
+
+/* Arrow and Paragraph A alignment */
+.arrow-container {
+    display: flex; /* Ensure alignment within the container */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Optional, for centering arrow */
+    margin-left: auto; /* Push arrow and paragraph to the right */
+}
+
+/* Paragraph inside arrow-container (Paragraph A) */
+.arrow-container + p {
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Responsive font size */
+}
+
+/* Shopping cart container */
+.cart-container {
+    position: relative; /* Ensures positioning is contained within its parent */
+    display: flex; /* Allows for alignment or stacking if needed */
+    justify-content: flex-end; /* Align the cart to the right */
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes any default padding */
+    width: 100%; /* Ensures it spans the width of the parent */
+}
+
+/* Shopping Cart Link */
+.cart {
+    position: absolute; /* Position relative to the content-wrapper */
+    display: flex;
+    top: 5vh;
+    right: 5vw;
+    color: black;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+/* Shopping Cart Text */
+.cart-text {
+    display: flex;
+    color: black;
+    text-decoration: underline;
+}
+
+/* Shopping Cart Icon */
+.cart-icon {
+    color: black;
+}
