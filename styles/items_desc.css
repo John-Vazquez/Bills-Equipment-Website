@@ -21,7 +21,10 @@
 .flex-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /*center;*/
+    justify-content: space-between;
+    gap: 5%;
+    padding: 2vh 2vw;
+    margin-top: 5vh;
 }
 
 /* Flex Box for Item */
@@ -29,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 3vh;
     background-color: white;
     width: 65%;
@@ -44,8 +48,8 @@
 .keywords {
     padding: 3vh;
     background-color: white;
-    width: 17%;
-    height: 50vh;
+    width: auto;
+    height: auto;
     margin-right: auto;
     margin-left: 3%;
     margin-top: 3%;
@@ -58,7 +62,7 @@
     display: flex;
     align-items: center;
     color: black;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     text-decoration: none;
     margin-left: 7%;
 }
@@ -69,7 +73,9 @@
 }
 
 .keywords .content {
+    width: 100%;
     margin-top: 0; /* Remove any extra margin at the top */
+    overflow-wrap: break-word; /* Ensure no text overflows */
 }
 
 .keywords .content p {
@@ -83,19 +89,23 @@
 /* Horizontal Line Inside of Keywords Flex Box */
 hr {
     background-color: lightgrey; 
+    width: auto;
 }
 
 /* Star Icon */
 .star-item {
-    display: flex; /* Arrange children in a row */
-    align-items: center; /* Vertically align the star and text */
-    gap: 0.5rem; /* Add some space between the star and paragraph */
-    margin-bottom: 0.5rem; /* Add space between each star-item */
+    display: flex; /* Arrange all children in a row */
+    align-items: center; /* Vertically align items */
+    gap: 0.5rem; /* Space between items */
+    margin-bottom: 0.5rem; /* Add space between star items */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 /* Paragraph for the Star Icon */
 .star-item p {
-    margin-top: 1%;
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-wrap: normal; /* Ensure normal word-breaking behavior */
 }
 
 /* Back Arrow for Search (Rentals Page) */
@@ -114,24 +124,49 @@ hr {
     text-indent: 13%;
 }
 
-/* Ensure arrow-container fills the available space */
+/* Arrow and Paragraph A alignment */
 .arrow-container {
-    margin-left: auto; /* Push the arrow to the far right */
+    display: flex; /* Ensure alignment within the container */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Optional, for centering arrow */
+    margin-left: auto; /* Push arrow and paragraph to the right */
+}
+
+/* Paragraph inside arrow-container (Paragraph A) */
+.arrow-container + p {
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Responsive font size */
 }
 
 /* Shopping cart container */
+.cart-container {
+    position: relative; /* Ensures positioning is contained within its parent */
+    display: flex; /* Allows for alignment or stacking if needed */
+    justify-content: flex-end; /* Align the cart to the right */
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes any default padding */
+    width: 100%; /* Ensures it spans the width of the parent */
+}
+
+/* Shopping Cart Link */
 .cart {
     position: absolute; /* Position relative to the content-wrapper */
-    top: 17rem; /* Adjust the vertical position */
-    right: 2.5rem; /* Adjust the horizontal position */
     display: flex;
-    align-items: center;
+    top: 5vh;
+    right: 5vw;
     color: black;
-    text-decoration: none; /* Prevent underline for the entire link */
+    align-items: center;
+    text-decoration: none;
     gap: 0.5rem;
 }
 
-/* Underline for the cart text */
+/* Shopping Cart Text */
 .cart-text {
+    display: flex;
+    color: black;
     text-decoration: underline;
+}
+
+/* Shopping Cart Icon */
+.cart-icon {
+    color: black;
 }
