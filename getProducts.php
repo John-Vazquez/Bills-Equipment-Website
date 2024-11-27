@@ -6,10 +6,6 @@ function fetchProducts() {
     $output = [];
 
     $conn = mysqli_connect("localhost", "root", "Bills1234*", "products");
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Write query for all products
     $sql = "SELECT * FROM products_for_sale"; // Ensure to end the statement with a semicolon

@@ -93,30 +93,44 @@
                     <div class="items-container-wrapper">
                         <?php
                             $products = fetchProducts();
+                            $productImages = [
+                                ['idProduct' => 1, 'imagePath' => 'Main Images/productImages/chainsaw.png'],
+                                ['idProduct' => 2, 'imagePath' => 'Main Images/productImages/forklift.png'],
+                                ['idProduct' => 3, 'imagePath' => 'Main Images/productImages/hammer.jpg'],
+                                ['idProduct' => 4, 'imagePath' => 'Main Images/productImages/gloves.jpg'],
+                            ];
+                            
                             // Check if there are products
-                            if (!empty($products)) 
-                            {
-                                foreach ($products as $product) 
-                                {
-                                    // Display each product in a structured format
-                                    ?>
-
-                                    <a href="rentalDesc.html">
-                                        <div class="items-container">
-                                            <<h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
-                                            <img src="<?php echo htmlspecialchars($product['ProductImage']); ?>" alt="Product Image" id="product-image">
-                                            <p>PRICE: <?php echo $product["ProductPrice"]; ?></p>
-                                            <p><?php echo htmlspecialchars($product['ProductDescription']); ?></p>
-                                        </div>
-                                    </a>
-                                    <?php
+                            if (!empty($products)) {
+                                foreach ($products as $product) {
+                                    // Find the corresponding image for the current product
+                                    $image = null;
+                                    foreach ($productImages as $img) {
+                                        if ($img['idProduct'] == $product['idProduct']) {
+                                            $image = $img;
+                                            break;
+                                        }
+                                    }
+                            
+                                    if ($image) {
+                                        // Display each product with the corresponding image
+                                        ?>
+                                        <a href="rentalDesc.html">
+                                            <div class="items-container">
+                                                <h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
+                                                <img src="<?php echo htmlspecialchars($image['imagePath']); ?>" alt="Product Image">
+                                                <p>PRICE: <?php echo $product["ProductPrice"]; ?></p>
+                                                <p><?php echo htmlspecialchars($product['ProductDescription']); ?></p>
+                                            </div>
+                                        </a>
+                                        <?php
+                                    }
                                 }
-                            } else 
-                            {
+                            } else {
                                 // If no products found
                                 echo "<p>No products available.</p>";
                             }
-                        ?>
+                            ?>
                     </div>
                 </div>
 
