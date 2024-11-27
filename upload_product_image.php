@@ -37,7 +37,7 @@ function updateProductImage($product_id, $image_path) {
 }
 
 // Array of products with their image paths
-$products = [
+$productImages = [
     ['idProduct' => 1, 'imagePath' => 'Main Images/productImages/chainsaw.png'],
     ['idProduct' => 2, 'imagePath' => 'Main Images/productImages/forklift.png'],
     ['idProduct' => 3, 'imagePath' => 'Main Images/productImages/hammer.jpg'],
