@@ -29,7 +29,7 @@ body::before {
 }
 
 .logo {
-    height: clamp(6vh, 10vh, 12vh);
+    height: clamp(12vh, 20vh, 24vh);
     width: auto;
     margin: clamp(2vh, 4vh, 6vh) 0 0 clamp(2vw, 4vw, 6vw);
 }
@@ -70,9 +70,9 @@ header nav ul::after {
 }
 
 header nav ul li {
-    font-size: clamp(1.6vh, 2vh, 2.4vh);
+    font-size: clamp(3vh, 4vh, 3vh);
     margin-left: clamp(1.2vh, 3vw, 3.6vh);
-    margin-top: 1vh;
+    margin-top: -5vh;
 }
 
 header nav ul li a {
@@ -115,7 +115,7 @@ header nav ul li a:hover::after {
 
 .main-content h2 {
     margin-top: clamp(12vh, 22vh, 26vh);
-    font-size: clamp(2.8vh, 3.6vh, 4.3vh);
+    font-size: clamp(5vh, 8vh, 7vh);
     margin-bottom: clamp(1.2vh, 2vh, 2.4vh);
     font-weight: bold;
 }
@@ -123,7 +123,7 @@ header nav ul li a:hover::after {
 .main-content p {
     max-width: clamp(24vh, 30vw, 48vh);
     word-wrap: break-word;
-    font-size: clamp(1.6vh, 1.8vh, 2.1vh);
+    font-size: clamp(2.3vh, 2.8vh, 4vh);
     margin-bottom: -10vh;
     font-weight: lighter;
     color: var(--primary-color);
