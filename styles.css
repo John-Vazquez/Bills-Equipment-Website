@@ -6,6 +6,18 @@
     --box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
 }
 
+
+
+.hidden-title {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
