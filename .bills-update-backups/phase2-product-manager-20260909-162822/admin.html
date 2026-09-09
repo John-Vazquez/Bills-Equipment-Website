@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Inventory Admin | Bill's Equipment</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/admin.css" />
+</head>
+<body class="admin-page">
+    <header class="admin-site-header">
+        <div class="admin-brand" aria-label="Bill's Equipment">
+            <img src="Main Images/BE Logo.png" alt="Bill's Equipment & Rentals" class="logo admin-logo" />
+        </div>
+
+        <nav aria-label="Main navigation">
+            <ul class="border-bottom">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="rentals.html">Rentals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-login active-nav"><a href="admin.html" aria-current="page">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <section id="adminLoading" class="admin-status-card">
+            <h1>Checking access...</h1>
+            <p>Verifying your Bill's Equipment admin session.</p>
+        </section>
+
+        <section id="adminApp" class="admin-shell" hidden>
+            <div class="admin-title-row">
+                <div>
+                    <span class="admin-badge">STAFF DASHBOARD</span>
+                    <h1>Inventory Administration</h1>
+                    <p>Manage the website catalog. Product editing is the next phase.</p>
+                </div>
+
+                <button id="logoutButton" class="admin-button admin-button-secondary" type="button">
+                    Log Out
+                </button>
+            </div>
+
+            <div class="admin-connection-banner">
+                <span class="admin-dot" aria-hidden="true"></span>
+                <div>
+                    <strong>Supabase connected</strong>
+                    <span id="adminIdentity">Authorized as billsadmin</span>
+                </div>
+            </div>
+
+            <div class="admin-stat-grid">
+                <article class="admin-stat-card">
+                    <span>Products</span>
+                    <strong id="productCount">--</strong>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>Categories</span>
+                    <strong id="categoryCount">--</strong>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>Product Images</span>
+                    <strong id="imageCount">--</strong>
+                </article>
+            </div>
+
+            <section class="admin-panel">
+                <div>
+                    <span class="admin-panel-label">PHASE 1</span>
+                    <h2>Authentication is working</h2>
+                    <p>
+                        This page is protected by Supabase Auth and the admin_profiles authorization row.
+                        In Phase 2 this area will become the visual product editor.
+                    </p>
+                </div>
+
+                <a class="admin-button" href="products.html">View Current Products Page</a>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/site-responsive.js" defer></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

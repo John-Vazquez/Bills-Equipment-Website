@@ -1,0 +1,264 @@
+.admin-page {
+    min-height: 100vh;
+    margin: 0;
+    color: #171717;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-image: url('../Main Images/BE Background UPSCALED.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.admin-page::before {
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.74),
+        rgba(0, 0, 0, 0.58)
+    );
+}
+
+.admin-site-header {
+    position: relative;
+    z-index: 10;
+    min-height: 150px;
+    padding-top: 1px;
+}
+
+.admin-brand {
+    display: inline-block;
+}
+
+.admin-page .admin-logo {
+    display: block;
+    object-fit: contain;
+}
+
+.admin-page header nav .active-nav > a {
+    color: #e00000;
+}
+
+.admin-page header nav .active-nav > a::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.admin-main {
+    width: min(1180px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 36px 0 80px;
+}
+
+.admin-status-card,
+.admin-shell {
+    background: rgba(255, 255, 255, 0.985);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 18px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.admin-status-card {
+    max-width: 620px;
+    margin: 80px auto 0;
+    padding: 34px;
+    text-align: center;
+}
+
+.admin-status-card h1,
+.admin-title-row h1,
+.admin-panel h2 {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+}
+
+.admin-status-card h1 {
+    margin-top: 0;
+}
+
+.admin-shell {
+    padding: clamp(22px, 4vw, 42px);
+}
+
+.admin-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.admin-badge,
+.admin-panel-label {
+    display: inline-block;
+    color: #b5161c;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+}
+
+.admin-title-row h1 {
+    margin: 8px 0 6px;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.admin-title-row p,
+.admin-panel p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.admin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 9px;
+    background: #d71920;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-button:hover {
+    background: #b8141a;
+}
+
+.admin-button-secondary {
+    background: #222;
+}
+
+.admin-button-secondary:hover {
+    background: #000;
+}
+
+.admin-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.admin-connection-banner {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 28px;
+    padding: 14px 16px;
+    border: 1px solid #b7dfc2;
+    border-radius: 11px;
+    background: #effaf2;
+}
+
+.admin-connection-banner strong,
+.admin-connection-banner span {
+    display: block;
+}
+
+.admin-connection-banner span {
+    margin-top: 2px;
+    color: #607067;
+    font-size: 0.82rem;
+}
+
+.admin-dot {
+    width: 11px;
+    height: 11px;
+    flex: 0 0 11px;
+    border-radius: 50%;
+    background: #16813a;
+}
+
+.admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.admin-stat-card {
+    padding: 20px;
+    border: 1px solid #e3e5e8;
+    border-radius: 12px;
+    background: #f8f9fa;
+}
+
+.admin-stat-card span {
+    color: #747474;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.admin-stat-card strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 2rem;
+}
+
+.admin-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    margin-top: 22px;
+    padding: 24px;
+    border: 1px solid #e3e5e8;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admin-panel h2 {
+    margin: 5px 0 7px;
+}
+
+@media (max-width: 900px) {
+    .admin-page {
+        background-attachment: scroll;
+    }
+
+    .admin-site-header {
+        min-height: auto;
+    }
+
+    .admin-page header nav .active-nav > a {
+        background: rgba(224, 0, 0, 0.14);
+        color: #fff;
+    }
+
+    .admin-main {
+        padding-top: 42px;
+    }
+}
+
+@media (max-width: 700px) {
+    .admin-title-row,
+    .admin-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-title-row .admin-button,
+    .admin-panel .admin-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-main {
+        width: min(100% - 22px, 1180px);
+        padding-top: 26px;
+    }
+
+    .admin-shell,
+    .admin-status-card {
+        border-radius: 14px;
+    }
+
+    .admin-shell {
+        padding: 20px 16px;
+    }
+}

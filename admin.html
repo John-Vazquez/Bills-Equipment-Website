@@ -35,16 +35,16 @@
 
     <main class="admin-main">
         <section id="adminLoading" class="admin-status-card">
-            <h1>Checking access...</h1>
-            <p>Verifying your Bill's Equipment admin session.</p>
+            <h1>Loading inventory...</h1>
+            <p>Verifying your session and loading products.</p>
         </section>
 
         <section id="adminApp" class="admin-shell" hidden>
             <div class="admin-title-row">
                 <div>
                     <span class="admin-badge">STAFF DASHBOARD</span>
-                    <h1>Inventory Administration</h1>
-                    <p>Manage the website catalog. Product editing is the next phase.</p>
+                    <h1>Product Manager</h1>
+                    <p>Add, edit, hide, sell, or remove products from the website catalog.</p>
                 </div>
 
                 <button id="logoutButton" class="admin-button admin-button-secondary" type="button">
@@ -62,35 +62,255 @@
 
             <div class="admin-stat-grid">
                 <article class="admin-stat-card">
-                    <span>Products</span>
-                    <strong id="productCount">--</strong>
+                    <span>Total Products</span>
+                    <strong id="productCount">0</strong>
                 </article>
-
+                <article class="admin-stat-card">
+                    <span>Published</span>
+                    <strong id="publishedCount">0</strong>
+                </article>
+                <article class="admin-stat-card">
+                    <span>Sold / Hidden</span>
+                    <strong id="inactiveCount">0</strong>
+                </article>
                 <article class="admin-stat-card">
                     <span>Categories</span>
-                    <strong id="categoryCount">--</strong>
-                </article>
-
-                <article class="admin-stat-card">
-                    <span>Product Images</span>
-                    <strong id="imageCount">--</strong>
+                    <strong id="categoryCount">0</strong>
                 </article>
             </div>
 
-            <section class="admin-panel">
-                <div>
-                    <span class="admin-panel-label">PHASE 1</span>
-                    <h2>Authentication is working</h2>
-                    <p>
-                        This page is protected by Supabase Auth and the admin_profiles authorization row.
-                        In Phase 2 this area will become the visual product editor.
-                    </p>
+            <section class="admin-catalog-panel">
+                <div class="admin-catalog-header">
+                    <div>
+                        <span class="admin-panel-label">WEBSITE CATALOG</span>
+                        <h2>Products</h2>
+                    </div>
+                    <button id="addProductButton" class="admin-button" type="button">+ Add Product</button>
                 </div>
 
-                <a class="admin-button" href="products.html">View Current Products Page</a>
+                <div class="admin-toolbar">
+                    <label class="admin-search-field">
+                        <span>Search</span>
+                        <input id="productSearch" type="search" placeholder="Name, brand, model, SKU..." autocomplete="off" />
+                    </label>
+
+                    <label>
+                        <span>Type</span>
+                        <select id="typeFilter">
+                            <option value="all">All types</option>
+                            <option value="product">Sale</option>
+                            <option value="rental">Rental</option>
+                            <option value="both">Sale + Rental</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Status</span>
+                        <select id="statusFilter">
+                            <option value="all">All statuses</option>
+                            <option value="active">Active</option>
+                            <option value="out_of_stock">Out of stock</option>
+                            <option value="sold">Sold</option>
+                            <option value="hidden">Hidden</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Category</span>
+                        <select id="categoryFilter">
+                            <option value="all">All categories</option>
+                        </select>
+                    </label>
+                </div>
+
+                <p id="inventoryMessage" class="admin-message" aria-live="polite"></p>
+
+                <div id="productGrid" class="admin-product-grid">
+                    <button id="addProductTile" class="admin-add-card" type="button">
+                        <span class="admin-add-icon">+</span>
+                        <strong>Add Product</strong>
+                        <small>Create a new sale listing</small>
+                    </button>
+                </div>
+
+                <div id="emptyState" class="admin-empty-state" hidden>
+                    <h3>No products match these filters.</h3>
+                    <p>Change the filters or add a new product.</p>
+                </div>
             </section>
         </section>
     </main>
+
+    <dialog id="productDialog" class="admin-dialog">
+        <form id="productForm" class="admin-product-form" method="dialog">
+            <input id="productId" type="hidden" />
+
+            <div class="admin-dialog-header">
+                <div>
+                    <span class="admin-panel-label">PRODUCT EDITOR</span>
+                    <h2 id="productDialogTitle">Add Product</h2>
+                </div>
+                <button id="closeProductDialog" class="admin-icon-button" type="button" aria-label="Close">Ã—</button>
+            </div>
+
+            <div class="admin-form-grid">
+                <label class="admin-field admin-field-wide">
+                    <span>Product Name *</span>
+                    <input id="productName" type="text" maxlength="180" required placeholder="Example: Multiquip Mortar Mixer" />
+                </label>
+
+                <label class="admin-field">
+                    <span>Listing Type</span>
+                    <select id="listingType">
+                        <option value="product">Sale</option>
+                        <option value="rental">Rental</option>
+                        <option value="both">Sale + Rental</option>
+                    </select>
+                </label>
+
+                <div class="admin-field">
+                    <span>Category</span>
+                    <div class="admin-inline-field">
+                        <select id="categoryId">
+                            <option value="">Uncategorized</option>
+                        </select>
+                        <button id="newCategoryButton" class="admin-mini-button" type="button">+ New</button>
+                    </div>
+                </div>
+
+                <label class="admin-field">
+                    <span>Brand</span>
+                    <input id="brand" type="text" maxlength="120" placeholder="Multiquip" />
+                </label>
+
+                <label class="admin-field">
+                    <span>Model</span>
+                    <input id="model" type="text" maxlength="120" placeholder="Model number" />
+                </label>
+
+                <label class="admin-field">
+                    <span>SKU</span>
+                    <input id="sku" type="text" maxlength="120" placeholder="Optional internal SKU" />
+                </label>
+
+                <label class="admin-field">
+                    <span>Condition</span>
+                    <select id="condition">
+                        <option value="unspecified">Not specified</option>
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                        <option value="refurbished">Refurbished</option>
+                    </select>
+                </label>
+
+                <label class="admin-field">
+                    <span>Price</span>
+                    <input id="price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" />
+                </label>
+
+                <label class="admin-check-field admin-align-bottom">
+                    <input id="callForPrice" type="checkbox" />
+                    <span>Call for Price</span>
+                </label>
+
+                <label class="admin-field">
+                    <span>Quantity</span>
+                    <input id="quantity" type="number" min="0" step="1" value="1" />
+                </label>
+
+                <label class="admin-field">
+                    <span>Status</span>
+                    <select id="status">
+                        <option value="active">Active</option>
+                        <option value="out_of_stock">Out of stock</option>
+                        <option value="sold">Sold</option>
+                        <option value="hidden">Hidden</option>
+                    </select>
+                </label>
+
+                <label class="admin-field">
+                    <span>Display Order</span>
+                    <input id="displayOrder" type="number" step="1" value="0" />
+                </label>
+
+                <label class="admin-field admin-field-wide">
+                    <span>Description</span>
+                    <textarea id="description" rows="5" maxlength="5000" placeholder="Describe the product, condition, included accessories, or other useful details."></textarea>
+                </label>
+
+                <div class="admin-field admin-field-wide">
+                    <span>Website Visibility</span>
+                    <div class="admin-check-row">
+                        <label class="admin-check-field">
+                            <input id="isPublished" type="checkbox" checked />
+                            <span>Published on website</span>
+                        </label>
+                        <label class="admin-check-field">
+                            <input id="featured" type="checkbox" />
+                            <span>Featured product</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="admin-field admin-field-wide">
+                    <span>Current Photos</span>
+                    <div id="existingImages" class="admin-existing-images">
+                        <div class="admin-photo-empty">No photos yet.</div>
+                    </div>
+                </div>
+
+                <label class="admin-field admin-field-wide">
+                    <span>Add Photos</span>
+                    <input id="productImages" type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple />
+                    <small>JPG, PNG, WebP or AVIF. Maximum 10 MB per image.</small>
+                </label>
+            </div>
+
+            <p id="productFormMessage" class="admin-message" aria-live="polite"></p>
+
+            <div class="admin-dialog-actions">
+                <button id="deleteProductButton" class="admin-button admin-button-danger" type="button" hidden>
+                    Delete Permanently
+                </button>
+
+                <div class="admin-dialog-actions-right">
+                    <button id="cancelProductButton" class="admin-button admin-button-secondary" type="button">
+                        Cancel
+                    </button>
+                    <button id="saveProductButton" class="admin-button" type="submit">
+                        Save Product
+                    </button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="categoryDialog" class="admin-dialog admin-dialog-small">
+        <form id="categoryForm" class="admin-product-form" method="dialog">
+            <div class="admin-dialog-header">
+                <div>
+                    <span class="admin-panel-label">CATEGORY</span>
+                    <h2>New Category</h2>
+                </div>
+                <button id="closeCategoryDialog" class="admin-icon-button" type="button" aria-label="Close">Ã—</button>
+            </div>
+
+            <label class="admin-field">
+                <span>Category Name *</span>
+                <input id="newCategoryName" type="text" maxlength="120" required placeholder="Example: Concrete Equipment" />
+            </label>
+
+            <p id="categoryMessage" class="admin-message" aria-live="polite"></p>
+
+            <div class="admin-dialog-actions">
+                <div></div>
+                <div class="admin-dialog-actions-right">
+                    <button id="cancelCategoryButton" class="admin-button admin-button-secondary" type="button">Cancel</button>
+                    <button id="saveCategoryButton" class="admin-button" type="submit">Create Category</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/site-responsive.js" defer></script>
