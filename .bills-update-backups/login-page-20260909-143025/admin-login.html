@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Staff Login | Bill's Equipment</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles/admin.css" />
+</head>
+<body class="admin-auth-page">
+  <main class="auth-shell">
+    <section class="auth-card" aria-labelledby="login-title">
+      <a class="auth-logo-link" href="index.html" aria-label="Back to Bill's Equipment home">
+        <img class="auth-logo" src="Main Images/BE Logo.png" alt="Bill's Equipment" />
+      </a>
+
+      <p class="eyebrow">STAFF ACCESS</p>
+      <h1 id="login-title">Inventory Login</h1>
+      <p class="auth-copy">Sign in to manage Bill's Equipment products and rentals.</p>
+
+      <form id="loginForm" class="stack-form">
+        <label>
+          <span>Username</span>
+          <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </label>
+        <div id="loginMessage" class="form-message" role="status" aria-live="polite"></div>
+        <button id="loginButton" class="primary-button" type="submit">Sign In</button>
+      </form>
+
+      <a class="back-link" href="index.html">â† Return to website</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/admin-login.js"></script>
+</body>
+</html>

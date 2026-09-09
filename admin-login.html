@@ -1,42 +1,82 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Staff Login | Bill's Equipment</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles/admin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Inventory Login | Bill's Equipment</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+    <!-- Main site styling first, then responsive overrides, then login-specific styling. -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/admin-login.css" />
 </head>
-<body class="admin-auth-page">
-  <main class="auth-shell">
-    <section class="auth-card" aria-labelledby="login-title">
-      <a class="auth-logo-link" href="index.html" aria-label="Back to Bill's Equipment home">
-        <img class="auth-logo" src="Main Images/BE Logo.png" alt="Bill's Equipment" />
-      </a>
+<body class="login-page">
+    <header class="login-site-header">
+        <!-- Intentionally NOT a link. The logo is branding only on this page. -->
+        <div class="login-brand" aria-label="Bill's Equipment">
+            <img src="Main Images/BE Logo.png" alt="Bill's Equipment & Rentals" class="logo login-logo" />
+        </div>
 
-      <p class="eyebrow">STAFF ACCESS</p>
-      <h1 id="login-title">Inventory Login</h1>
-      <p class="auth-copy">Sign in to manage Bill's Equipment products and rentals.</p>
+        <nav aria-label="Main navigation">
+            <ul class="border-bottom">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="rentals.html">Rentals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-login active-nav"><a href="admin-login.html" aria-current="page">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <form id="loginForm" class="stack-form">
-        <label>
-          <span>Username</span>
-          <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required />
-        </label>
-        <label>
-          <span>Password</span>
-          <input id="password" name="password" type="password" autocomplete="current-password" required />
-        </label>
-        <div id="loginMessage" class="form-message" role="status" aria-live="polite"></div>
-        <button id="loginButton" class="primary-button" type="submit">Sign In</button>
-      </form>
+    <main class="login-main">
+        <section class="login-card" aria-labelledby="login-title">
+            <div class="login-heading">
+                <span class="staff-badge">STAFF ACCESS</span>
+                <h1 id="login-title">Inventory Login</h1>
+                <p>Sign in to manage Bill's Equipment products and rentals.</p>
+            </div>
 
-      <a class="back-link" href="index.html">â† Return to website</a>
-    </section>
-  </main>
+            <form id="loginForm" class="login-form" autocomplete="on">
+                <label for="username">Username</label>
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    autocomplete="username"
+                    autocapitalize="none"
+                    spellcheck="false"
+                    placeholder="Username"
+                    required
+                />
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script type="module" src="js/admin-login.js"></script>
+                <label for="password">Password</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Password"
+                    required
+                />
+
+                <div id="loginMessage" class="login-message" role="status" aria-live="polite"></div>
+
+                <button id="loginButton" class="login-submit" type="submit">Sign In</button>
+            </form>
+
+            <p class="login-note">Authorized Bill's Equipment staff only.</p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/site-responsive.js" defer></script>
+    <script type="module" src="js/admin-login.js"></script>
 </body>
 </html>

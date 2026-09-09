@@ -1,0 +1,210 @@
+﻿/* Bill's Equipment staff login page. Loaded after the normal site CSS. */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    color: #171717;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-image: url('../Main Images/BE Background UPSCALED.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.login-page::before {
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.55)
+    );
+}
+
+/* Keep this header visually consistent with the rest of the public site. */
+.login-site-header {
+    position: relative;
+    z-index: 10;
+    min-height: 150px;
+    padding-top: 1px;
+}
+
+.login-brand {
+    display: inline-block;
+}
+
+.login-page .login-logo {
+    display: block;
+    object-fit: contain;
+}
+
+.login-page header nav .active-nav > a {
+    color: #e00000;
+}
+
+.login-page header nav .active-nav > a::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.login-main {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 42px 20px 90px;
+}
+
+.login-card {
+    width: min(100%, 470px);
+    background: rgba(255, 255, 255, 0.985);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.login-heading {
+    margin-bottom: 26px;
+}
+
+.staff-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f6e8e8;
+    color: #b5161c;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+}
+
+.login-heading h1 {
+    margin: 0;
+    color: #171717;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+    line-height: 1.1;
+}
+
+.login-heading p {
+    margin: 10px 0 0;
+    color: #646464;
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.login-form {
+    display: grid;
+    gap: 10px;
+}
+
+.login-form label {
+    margin-top: 5px;
+    color: #292929;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.login-form input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #cfd3d9;
+    border-radius: 9px;
+    background: #fff;
+    color: #171717;
+    font: inherit;
+    font-size: 0.94rem;
+    outline: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.login-form input:focus {
+    border-color: #d71920;
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+.login-message {
+    min-height: 20px;
+    margin-top: 2px;
+    font-size: 0.83rem;
+    line-height: 1.4;
+}
+
+.login-message.error,
+.form-message.error {
+    color: #b42318;
+}
+
+.login-submit {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 3px;
+    border: 0;
+    border-radius: 9px;
+    background: #d71920;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.login-submit:hover {
+    background: #b8141a;
+}
+
+.login-submit:active {
+    transform: translateY(1px);
+}
+
+.login-submit:disabled {
+    cursor: wait;
+    opacity: 0.68;
+}
+
+.login-note {
+    margin: 22px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid #ececec;
+    color: #858585;
+    text-align: center;
+    font-size: 0.76rem;
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        background-attachment: scroll;
+    }
+
+    .login-site-header {
+        min-height: auto;
+    }
+
+    .login-main {
+        min-height: calc(100vh - 100px);
+        align-items: flex-start;
+        padding-top: 52px;
+    }
+
+    .login-page header nav .active-nav > a {
+        background: rgba(224, 0, 0, 0.14);
+        color: #fff;
+    }
+}
+
+@media (max-width: 540px) {
+    .login-main {
+        padding: 34px 14px 60px;
+    }
+
+    .login-card {
+        padding: 26px 20px;
+        border-radius: 14px;
+    }
+
+    .login-heading {
+        margin-bottom: 21px;
+    }
+}
