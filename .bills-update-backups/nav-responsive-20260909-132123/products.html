@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,7 @@
 	
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles/rentals-products.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="scripts.js"></script>
     <!-- Google Font: Montserrat Bold 700 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -77,11 +77,10 @@
         font-weight: bold;
       }
     </style>
-      <link rel="stylesheet" href="styles/responsive.css" />
-</head>
-  <body id="rentals">
+  </head>
+  <body id="products">
     <header class="title">
-      <!-- Logo and Navigation -->
+      <!-- Logo and Navigation Bar -->
       <a href="index.html">
         <img
           src="Main Images/BE Logo.png"
@@ -96,10 +95,9 @@
           <li><a href="products.html">Products</a></li>
           <li><a href="rentals.html">Rentals</a></li>
           <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-login"><a href="admin-login.html">Login</a></li>
         </ul>
       </nav>
-      <h1>Rentals</h1>
+      <h1>Products</h1>
     </header>
 
     <!-- Original Content Wrapper (unchanged) -->
@@ -109,13 +107,13 @@
         <div class="filters">
           <!-- Keyword Filters (Tags) -->
           <h3>Keywords</h3>
-          <div class="tag" onclick="buttonKeywords(this)">
+          <div class="tag button" onclick="buttonKeywords(this)">
             Machinery <span class="close"></span>
           </div>
-          <div class="tag" onclick="buttonKeywords(this)">
+          <div class="tag button" onclick="buttonKeywords(this)">
             Electric <span class="close"></span>
           </div>
-          <div class="tag" onclick="buttonKeywords(this)">
+          <div class="tag button" onclick="buttonKeywords(this)">
             Generators <span class="close"></span>
           </div>
 
@@ -148,10 +146,11 @@
           <label><input type="checkbox" /> Small Project</label><br />
         </div>
 
-        <!-- Search and Sorting Section -->
+        <!-- Main Content Section -->
         <div>
-          <!-- Search Bar -->
+          <!-- Search Bar and Sorting Options -->
           <div class="search-and-sorting">
+            <!-- Search Bar -->
             <div class="search">
               <input type="text" id="search-input" placeholder="Search..." />
               <button onclick="searchFunction()">
@@ -168,21 +167,23 @@
             </div>
           </div>
 
-          <!-- Rental Items (Smaller) Section -->
+          <!-- Product Items Section -->
           <div class="items-container-wrapper">
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
+            <!-- Links to product detail pages for each item -->
+            <a href="productDesc.html"><div class="items-container"></div></a>
+            <a href="productDesc.html"><div class="items-container"></div></a>
+            <a href="productDesc.html"><div class="items-container"></div></a>
+            <a href="productDesc.html"><div class="items-container"></div></a>
+            <a href="productDesc.html"><div class="items-container"></div></a>
+            <a href="productDesc.html"><div class="items-container"></div></a>
           </div>
 
-          <!-- Rental Items (Larger) Section -->
+          <!-- Larger Product Items Section -->
           <div class="bigItems-container-wrapper">
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
+            <!-- Links to product detail pages for larger items -->
+            <a href="productDesc.html"><div class="bigItems-container"></div></a>
+            <a href="productDesc.html"><div class="bigItems-container"></div></a>
+            <a href="productDesc.html"><div class="bigItems-container"></div></a>
           </div>
         </div>
       </div>
@@ -218,7 +219,5 @@
         });
       });
     </script>
-      <script src="js/site-responsive.js" defer></script>
-</body>
+  </body>
 </html>
-

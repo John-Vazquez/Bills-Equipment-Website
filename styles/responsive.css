@@ -1,0 +1,508 @@
+﻿/*
+ * Bill's Equipment responsive overrides.
+ * Loaded after the existing page styles so we can improve scaling without
+ * rewriting the original desktop design.
+ */
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+header {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.logo {
+  height: auto !important;
+  width: clamp(120px, 15vw, 230px) !important;
+  max-width: 34vw;
+  margin: clamp(16px, 3vw, 44px) 0 0 clamp(18px, 4vw, 64px) !important;
+  object-fit: contain;
+}
+
+header nav {
+  margin: clamp(-54px, -4vw, -30px) clamp(18px, 4vw, 64px) 0 auto !important;
+  padding-left: 0 !important;
+  max-width: calc(100% - 300px);
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.8vw, 28px);
+  margin: 0;
+  padding: 0 0 10px !important;
+}
+
+header nav ul::after {
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+}
+
+header nav ul li {
+  margin: 0 !important;
+  font-size: clamp(15px, 1.45vw, 24px) !important;
+  line-height: 1.2;
+}
+
+header nav ul li a {
+  white-space: nowrap;
+}
+
+header nav .nav-login a {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+}
+
+header nav .nav-login a:hover {
+  border-color: #e00000;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(15, 15, 15, 0.78);
+  color: #fff;
+  border-radius: 9px;
+  width: 44px;
+  height: 42px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  z-index: 1001;
+}
+
+.mobile-nav-toggle span,
+.mobile-nav-toggle::before,
+.mobile-nav-toggle::after {
+  content: '';
+  display: block;
+  width: 21px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 99px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-nav-toggle span {
+  margin: 5px auto;
+}
+
+header.nav-open .mobile-nav-toggle::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+header.nav-open .mobile-nav-toggle span {
+  opacity: 0;
+}
+
+header.nav-open .mobile-nav-toggle::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Home */
+.main-content {
+  margin: 0 !important;
+  padding: clamp(72px, 10vh, 150px) clamp(20px, 6vw, 90px) clamp(55px, 8vh, 100px) !important;
+}
+
+.main-content h2 {
+  margin: 0 0 18px !important;
+  max-width: 1000px;
+  font-size: clamp(2.3rem, 5.1vw, 5.6rem) !important;
+  line-height: 1.02;
+}
+
+.main-content p {
+  margin: 0 !important;
+  max-width: 680px !important;
+  font-size: clamp(1rem, 1.55vw, 1.45rem) !important;
+  line-height: 1.55;
+}
+
+.secondary-content {
+  margin-top: 0 !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2vw, 28px) !important;
+  padding: clamp(24px, 4vw, 58px) !important;
+}
+
+.secondary-content-box {
+  min-width: 0;
+}
+
+/* Shared page sections */
+.title h1,
+.contact-page #contact-message h3 {
+  margin: clamp(35px, 6vw, 85px) auto clamp(35px, 6vw, 85px) !important;
+  padding: 0 18px;
+  font-size: clamp(2rem, 4vw, 3.6rem) !important;
+}
+
+.content-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* About */
+.about-text-box {
+  padding: clamp(24px, 4vw, 56px) !important;
+}
+
+.about-description {
+  max-width: 900px !important;
+  font-size: clamp(1rem, 2vw, 1.4rem) !important;
+  line-height: 1.65;
+  padding: 0 !important;
+}
+
+.about-image-box {
+  padding: 0 clamp(18px, 4vw, 56px) clamp(36px, 6vw, 80px) !important;
+}
+
+.about-image {
+  width: min(100%, 900px);
+  height: auto;
+}
+
+/* Contact */
+.contact-secondary-content {
+  gap: clamp(16px, 3vw, 34px) !important;
+  padding: clamp(20px, 4vw, 56px) !important;
+}
+
+.contact-page .contact-box {
+  min-width: min(100%, 360px);
+  max-width: 760px !important;
+  padding: clamp(20px, 3vw, 42px) !important;
+}
+
+.contact-page #map {
+  min-height: 320px;
+}
+
+.contact-page input,
+.contact-page textarea,
+.contact-page button {
+  width: 100%;
+  min-width: 0;
+}
+
+.recaptcha-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Products + Rentals */
+.filters-and-products {
+  width: 100%;
+  min-width: 0;
+  gap: clamp(14px, 2vw, 28px) !important;
+}
+
+.filters {
+  flex: 0 0 clamp(210px, 20vw, 300px);
+  min-width: 0;
+}
+
+.filters-and-products > div:not(.filters) {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.search-and-sorting {
+  gap: 12px;
+}
+
+.search {
+  min-width: 0;
+}
+
+#search-input {
+  width: clamp(190px, 24vw, 380px) !important;
+  min-height: 40px;
+  padding: 8px 42px 8px 14px !important;
+}
+
+.search img {
+  width: 22px !important;
+  height: 22px;
+  object-fit: contain;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flex-container button {
+  padding: 8px 11px !important;
+  font-size: clamp(0.8rem, 1.1vw, 1rem) !important;
+}
+
+.items-container-wrapper,
+.bigItems-container-wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px !important;
+  padding-left: 0 !important;
+}
+
+.items-container-wrapper > a,
+.bigItems-container-wrapper > a {
+  min-width: 0;
+}
+
+.items-container,
+.bigItems-container {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+}
+
+/* Product / rental detail placeholders */
+.content-wrapper > .flex-container {
+  width: 100%;
+  min-width: 0;
+}
+
+.item {
+  min-width: 0;
+}
+
+.keywords {
+  min-width: 230px;
+  max-width: 100%;
+}
+
+.cart-container,
+.arrow-back {
+  max-width: 100%;
+}
+
+/* Half-screen / tablet */
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll !important;
+  }
+
+  header {
+    padding-bottom: 14px;
+  }
+
+  .logo {
+    width: clamp(115px, 27vw, 180px) !important;
+    max-width: calc(100% - 92px);
+    margin: 16px 0 0 18px !important;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  header nav {
+    display: none !important;
+    width: calc(100% - 32px);
+    max-width: none;
+    margin: 14px 16px 0 !important;
+    padding: 8px !important;
+    background: rgba(17, 17, 17, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  header.nav-open nav {
+    display: block !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px !important;
+    padding: 0 !important;
+  }
+
+  header nav ul::after {
+    display: none !important;
+  }
+
+  header nav ul li {
+    width: 100%;
+    font-size: 1rem !important;
+  }
+
+  header nav ul li a,
+  header nav .nav-login a {
+    display: block;
+    width: 100%;
+    padding: 11px 13px;
+    border: 0;
+    border-radius: 7px;
+  }
+
+  header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  header nav ul li a::after {
+    display: none;
+  }
+
+  .main-content {
+    padding: clamp(55px, 10vw, 90px) clamp(18px, 6vw, 48px) 55px !important;
+  }
+
+  .secondary-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .filters-and-products {
+    flex-direction: column;
+    padding: 16px !important;
+  }
+
+  .filters {
+    width: 100%;
+    flex: none;
+    padding: 18px !important;
+  }
+
+  .search-and-sorting {
+    flex-direction: column;
+    align-items: stretch !important;
+    padding: 14px !important;
+  }
+
+  .search,
+  #search-input {
+    width: 100% !important;
+  }
+
+  .search button {
+    right: 10px !important;
+  }
+
+  .contact-secondary-content {
+    flex-direction: column;
+  }
+
+  .contact-page .contact-box {
+    width: 100%;
+    max-width: none !important;
+    flex-basis: auto !important;
+  }
+
+  .content-wrapper > .flex-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    margin-top: 0 !important;
+    padding: 18px !important;
+  }
+
+  .item,
+  .keywords {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 280px;
+    margin: 0 !important;
+  }
+
+  .cart {
+    position: static !important;
+    margin: 0 !important;
+    padding: 16px 18px 0;
+    justify-content: flex-end;
+  }
+
+  .arrow-back .search {
+    margin: 18px !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .main-content h2 {
+    font-size: clamp(2rem, 11vw, 3.5rem) !important;
+  }
+
+  .main-content p {
+    font-size: 1rem !important;
+  }
+
+  .secondary-content {
+    grid-template-columns: 1fr !important;
+    padding: 18px !important;
+  }
+
+  .secondary-content-box:hover {
+    transform: none !important;
+  }
+
+  .title h1,
+  .contact-page #contact-message h3 {
+    margin: 28px auto 36px !important;
+    font-size: 2rem !important;
+  }
+
+  .items-container-wrapper,
+  .bigItems-container-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px !important;
+  }
+
+  .flex-container button {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .contact-page #map {
+    min-height: 260px;
+  }
+
+  .contact-page .contact-box {
+    padding: 18px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .items-container-wrapper,
+  .bigItems-container-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
