@@ -1,0 +1,51 @@
+Bill's Equipment legacy inventory candidate extraction
+Generated: 2026-09-09 18:52:18
+
+Candidate rows before dedupe: 322
+Unique candidates after dedupe: 277
+Needs review: 57
+
+By brand:
+  (unknown brand): 51
+  Wacker: 36
+  Honda: 26
+  Multiquip: 19
+  Bil-Jax: 14
+  EDCO: 14
+  Genie: 13
+  Sullair: 12
+  William Henry: 9
+  Stone: 8
+  Milwaukee: 8
+  Spray Force: 7
+  MBW: 7
+  Lino Sella: 7
+  STIHL: 6
+  NED Corp: 6
+  RoboToolz: 6
+  Miller: 6
+  Makita: 6
+  Pressure-Pro: 5
+  Gatorz: 5
+  Oztec: 3
+  Kraft Tool: 1
+  Buffalo Tools: 1
+  Lombardini: 1
+
+By category:
+  (uncategorized): 202
+  Safety Equipment: 38
+  Aerial Lifts: 15
+  Concrete Mixers: 7
+  Scaffolding: 4
+  Rebar Cutters/Benders: 3
+  Rollers: 3
+  Air Compressors: 3
+  Concrete Pumps: 2
+
+Important:
+- Nothing was imported into Supabase.
+- Nothing was committed or pushed.
+- Prices default to Call for Price because the legacy catalog generally did not publish prices.
+- All extracted items are marked Sale/Product for now.
+- This is a review inventory, not the final import.
