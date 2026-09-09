@@ -1,5 +1,7 @@
-import { supabase } from './supabase-client.js';
+﻿import { supabase } from './supabase-client.js';
 
+// Staff use only this username. Supabase still uses an internal email-shaped
+// identifier behind the scenes so its secure Auth + RLS system can protect writes.
 const MASTER_USERNAME = 'billsadmin';
 const INTERNAL_AUTH_EMAIL = 'billsadmin@auth.billsequipmentandrentals.com';
 
@@ -9,75 +11,64 @@ const loginMessage = document.getElementById('loginMessage');
 
 function setMessage(message, type = '') {
   loginMessage.textContent = message || '';
-  loginMessage.className = `login-message ${type}`.trim();
+  loginMessage.className = `form-message ${type}`.trim();
 }
 
-async function getAuthorizedAdmin(userId) {
+async function userIsAdmin(userId) {
   const { data, error } = await supabase
     .from('admin_profiles')
-    .select('id, role, active')
+    .select('id, active')
     .eq('id', userId)
     .eq('active', true)
     .maybeSingle();
 
   if (error) throw error;
-  if (!data || !['admin', 'editor'].includes(data.role)) return null;
-  return data;
+  return Boolean(data);
 }
 
 async function redirectExistingAdmin() {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session?.user) return;
+
   try {
-    const { data: { session }, error } = await supabase.auth.getSession();
-    if (error || !session?.user) return;
-
-    const admin = await getAuthorizedAdmin(session.user.id);
-    if (admin) {
+    if (await userIsAdmin(session.user.id)) {
       window.location.replace('admin.html');
-      return;
+    } else {
+      await supabase.auth.signOut();
     }
-
-    await supabase.auth.signOut();
   } catch (error) {
-    console.error('Existing session check failed:', error);
+    console.error(error);
   }
 }
 
 loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-
-  const username = document.getElementById('username').value.trim().toLowerCase();
-  const password = document.getElementById('password').value;
-
   setMessage('');
-
-  if (username !== MASTER_USERNAME || !password) {
-    setMessage('Invalid username or password.', 'error');
-    return;
-  }
-
   loginButton.disabled = true;
-  loginButton.textContent = 'Signing in...';
+  loginButton.textContent = 'Signing inâ€¦';
 
   try {
+    const username = document.getElementById('username').value.trim().toLowerCase();
+    const password = document.getElementById('password').value;
+
+    if (username !== MASTER_USERNAME) {
+      throw new Error('Invalid username or password.');
+    }
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email: INTERNAL_AUTH_EMAIL,
       password,
     });
 
-    if (error || !data.user) {
-      throw new Error('Invalid username or password.');
-    }
+    if (error) throw new Error('Invalid username or password.');
 
-    const admin = await getAuthorizedAdmin(data.user.id);
-
-    if (!admin) {
+    if (!data.user || !(await userIsAdmin(data.user.id))) {
       await supabase.auth.signOut();
       throw new Error('This account is not authorized for the inventory dashboard.');
     }
 
     window.location.replace('admin.html');
   } catch (error) {
-    console.error('Login failed:', error);
     setMessage(error.message || 'Unable to sign in.', 'error');
   } finally {
     loginButton.disabled = false;
@@ -86,7 +77,6 @@ loginForm.addEventListener('submit', async (event) => {
 });
 
 const reason = new URLSearchParams(window.location.search).get('reason');
-
 if (reason === 'unauthorized') {
   setMessage('This session is not authorized for the inventory dashboard.', 'error');
 }
