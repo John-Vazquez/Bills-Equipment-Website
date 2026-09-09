@@ -1,0 +1,24 @@
+Bill's Equipment legacy-site crawl
+Generated: 2026-09-09 18:46:11
+Seeds:
+https://billsequipment.mydomain.com/index.htm
+https://billsequipment.mydomain.com/productslist.htm
+
+Pages fetched: 48
+Unique URLs seen: 86
+Links found: 6049
+Legacy-site links: 556
+Image references: 1660
+Errors: 38
+
+No images were downloaded.
+No Supabase data was changed.
+No Git commit or push was performed.
+
+Files:
+- pages.csv             Page titles, headings, and extracted text
+- links.csv             All discovered links
+- same-host-links.csv   Links pointing to the old Bill's website
+- images.csv            Legacy image URLs and alt text
+- errors.csv            Failed requests
+- raw\                   Raw HTML copies for full migration analysis
