@@ -1,224 +1,113 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bills Equipment</title>
-
-    <link rel="icon" type="image/x-icon" href="https://www.billsequipmentandrentals.com/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.billsequipmentandrentals.com/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.billsequipmentandrentals.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="https://www.billsequipmentandrentals.com/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://www.billsequipmentandrentals.com/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://www.billsequipmentandrentals.com/web-app-manifest-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://www.billsequipmentandrentals.com/web-app-manifest-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.billsequipmentandrentals.com/apple-touch-icon.png">
-    <link rel="manifest" href="https://www.billsequipmentandrentals.com/site.webmanifest">
-
-    
-	
+    <title>Rentals | Bill's Equipment</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles/rentals-products.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-    <!-- Google Font: Montserrat Bold 700 -->
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/products-dynamic.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- OPTIONAL: Inline styling for the modal; or place in your CSS file -->
-    <style>
-      /* Modal Overlay */
-      #maintenanceModal {
-        display: none; /* We'll show it on page load via JavaScript */
-        position: fixed;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        justify-content: center;
-        align-items: center;
-      }
-      /* Modal Content */
-      #maintenanceModal .modal-content {
-        background-color: #fff;
-        border-radius: 5px;
-        padding: 20px;
-        width: 90%;
-        max-width: 600px;
-        margin: auto;
-        text-align: center;
-        position: relative;
-      }
-      /* Link/Button in Modal */
-      #maintenanceModal a.modal-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        text-decoration: none;
-        background-color: #ccc;
-        border-radius: 4px;
-        font-weight: bold;
-        color: #000;
-      }
-      /* Close Button */
-      .close-modal-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        background: #ddd;
-        border: none;
-        border-radius: 4px;
-        padding: 5px 10px;
-        font-weight: bold;
-      }
-    </style>
-      <link rel="stylesheet" href="styles/responsive.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
 </head>
-  <body id="rentals">
+<body id="rentals" class="catalog-page">
     <header class="title">
-      <!-- Logo and Navigation -->
-      <a href="index.html">
-        <img
-          src="Main Images/BE Logo.png"
-          alt="Error Loading Logo"
-          class="logo"
-        />
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="rentals.html">Rentals</a></li>
-          <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-login"><a href="admin-login.html">Login</a></li>
-        </ul>
-      </nav>
-      <h1>Rentals</h1>
+        <a href="index.html">
+            <img src="Main Images/BE Logo.png" alt="Bill's Equipment & Rentals" class="logo" />
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="rentals.html" aria-current="page">Rentals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-login"><a href="admin-login.html">Login</a></li>
+            </ul>
+        </nav>
+        <h1>Rentals</h1>
     </header>
 
-    <!-- Original Content Wrapper (unchanged) -->
-    <div class="content-wrapper">
-      <div class="filters-and-products">
-        <!-- Filters Section -->
-        <div class="filters">
-          <!-- Keyword Filters (Tags) -->
-          <h3>Keywords</h3>
-          <div class="tag" onclick="buttonKeywords(this)">
-            Machinery <span class="close"></span>
-          </div>
-          <div class="tag" onclick="buttonKeywords(this)">
-            Electric <span class="close"></span>
-          </div>
-          <div class="tag" onclick="buttonKeywords(this)">
-            Generators <span class="close"></span>
-          </div>
-
-          <!-- Brand Filters -->
-          <h4>Brand</h4>
-          <label><input type="checkbox" checked /> Multiquip</label><br />
-          <label><input type="checkbox" checked /> Portable</label><br />
-          <label><input type="checkbox" checked /> Wheels or fold-up</label><br />
-
-          <!-- Price Range Filter -->
-          <h4>Price</h4>
-          <div class="slider">
-            <div class="progress"></div>
-          </div>
-          <div class="range-input">
-            <input type="range" min="0" max="3900" value="0" />
-            <input type="range" min="0" max="3900" value="3900" />
-          </div>
-
-          <!-- Color Filters -->
-          <h4>Color</h4>
-          <label><input type="checkbox" checked /> Black</label><br />
-          <label><input type="checkbox" /> White</label><br />
-          <label><input type="checkbox" /> Gray</label><br />
-
-          <!-- Size Filters -->
-          <h4>Size</h4>
-          <label><input type="checkbox" checked /> Heavy Duty</label><br />
-          <label><input type="checkbox" /> Regular</label><br />
-          <label><input type="checkbox" /> Small Project</label><br />
-        </div>
-
-        <!-- Search and Sorting Section -->
-        <div>
-          <!-- Search Bar -->
-          <div class="search-and-sorting">
-            <div class="search">
-              <input type="text" id="search-input" placeholder="Search..." />
-              <button onclick="searchFunction()">
-                <img src="Main Images/search.png" alt="Search" />
-              </button>
+    <main class="catalog-main">
+        <section class="catalog-intro">
+            <div>
+                <span class="catalog-eyebrow">BILL'S EQUIPMENT & RENTALS</span>
+                <h2>Equipment for Rent</h2>
+                <p>Browse current rental equipment. Availability changes regularly, so contact Bill's to confirm your dates.</p>
             </div>
+            <a class="catalog-contact-button" href="contact.html">Contact Bill's</a>
+        </section>
 
-            <!-- Sorting Buttons -->
-            <div class="flex-container">
-              <button onclick="buttonClicked(this)">Relevant</button>
-              <button onclick="buttonClicked(this)">Price Ascending</button>
-              <button onclick="buttonClicked(this)">Price Descending</button>
-              <button onclick="buttonClicked(this)">Rating</button>
+        <section class="catalog-layout">
+            <aside class="catalog-filters" aria-label="Rental filters">
+                <div class="catalog-filter-section">
+                    <div class="catalog-filter-heading">
+                        <h3>Categories</h3>
+                        <button id="clearCategoryFilter" class="catalog-text-button" type="button">Clear</button>
+                    </div>
+                    <div id="categoryFilterList" class="catalog-filter-list">
+                        <span class="catalog-filter-loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="catalog-filter-section">
+                    <div class="catalog-filter-heading">
+                        <h3>Brands</h3>
+                        <button id="clearBrandFilter" class="catalog-text-button" type="button">Clear</button>
+                    </div>
+                    <div id="brandFilterList" class="catalog-filter-list">
+                        <span class="catalog-filter-loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="catalog-filter-section">
+                    <h3>Availability</h3>
+                    <label class="catalog-check">
+                        <input id="availableOnly" type="checkbox" />
+                        <span>Available only</span>
+                    </label>
+                </div>
+            </aside>
+
+            <div class="catalog-results">
+                <div class="catalog-toolbar">
+                    <label class="catalog-search">
+                        <span class="sr-only">Search rentals</span>
+                        <input id="rentalSearch" type="search" placeholder="Search rentals, brands, models..." autocomplete="off" />
+                    </label>
+
+                    <div class="catalog-toolbar-right">
+                        <span id="resultCount" class="catalog-result-count">Loading...</span>
+                        <label class="catalog-sort">
+                            <span class="sr-only">Sort rentals</span>
+                            <select id="rentalSort">
+                                <option value="display">Featured / Default</option>
+                                <option value="name-asc">Name A-Z</option>
+                                <option value="price-asc">Rate Low-High</option>
+                                <option value="price-desc">Rate High-Low</option>
+                                <option value="newest">Recently Updated</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <p id="catalogMessage" class="catalog-message" aria-live="polite"></p>
+                <div id="rentalsGrid" class="public-products-grid" aria-live="polite"></div>
+
+                <div id="catalogEmpty" class="catalog-empty" hidden>
+                    <h3>No rentals found</h3>
+                    <p>No rental listings match these filters yet.</p>
+                    <button id="clearAllFilters" class="catalog-contact-button catalog-clear-button" type="button">Clear Filters</button>
+                </div>
             </div>
-          </div>
+        </section>
+    </main>
 
-          <!-- Rental Items (Smaller) Section -->
-          <div class="items-container-wrapper">
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-            <a href="rentalDesc.html"><div class="items-container"></div></a>
-          </div>
-
-          <!-- Rental Items (Larger) Section -->
-          <div class="bigItems-container-wrapper">
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
-            <a href="rentalDesc.html"><div class="bigItems-container"></div></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAINTENANCE MODAL (Overlay) -->
-    <div id="maintenanceModal">
-      <div class="modal-content">
-        <button class="close-modal-btn" id="closeModalBtn">X</button>
-        <h2>This page is currently under maintenance</h2>
-        <p>
-          Please click the button below to view the old website with our products.
-          Thank you for your patience as we improve the website for you!
-        </p>
-        <a
-          href="https://billsequipment.mydomain.com/productslist.htm"
-          class="modal-button"
-        >
-          View Old Website
-        </a>
-      </div>
-    </div>
-
-    <!-- Script to show modal on page load and close it -->
-    <script>
-      window.addEventListener("load", function() {
-        // Show modal on page load
-        document.getElementById("maintenanceModal").style.display = "flex";
-
-        // Close modal on button click
-        document.getElementById("closeModalBtn").addEventListener("click", function() {
-          document.getElementById("maintenanceModal").style.display = "none";
-        });
-      });
-    </script>
-      <script src="js/site-responsive.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/site-responsive.js" defer></script>
+    <script type="module" src="js/rentals.js"></script>
 </body>
 </html>
-

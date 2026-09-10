@@ -1,140 +1,75 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bills Equipment</title>
-
-        <link rel="icon" type="image/x-icon" href="https://www.billsequipmentandrentals.com/favicon.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://www.billsequipmentandrentals.com/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://www.billsequipmentandrentals.com/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="48x48" href="https://www.billsequipmentandrentals.com/favicon-48x48.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="https://www.billsequipmentandrentals.com/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="https://www.billsequipmentandrentals.com/web-app-manifest-192x192.png">
-        <link rel="icon" type="image/png" sizes="512x512" href="https://www.billsequipmentandrentals.com/web-app-manifest-512x512.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://www.billsequipmentandrentals.com/apple-touch-icon.png">
-        <link rel="manifest" href="https://www.billsequipmentandrentals.com/site.webmanifest">
-
-        
-		<link rel="stylesheet" href="styles.css" />
-		<link rel="stylesheet" href="styles/items_desc.css" />
-		<script type="text/javascript" src="scripts.js"></script>
-		<!-- Google Font: Montserrat Bold 700 -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" />
-        <link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-			rel="stylesheet" />
-	    <link rel="stylesheet" href="styles/responsive.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental | Bill's Equipment</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/products-dynamic.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
 </head>
-	<body id="rentals">
-        <header class="title">
-			<!-- Logo and Navigation -->
-			<a href="index.html">
-				<img src="Main Images/BE Logo.png" alt="Error Loading Logo" class="logo" />
-			</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="products.html">Products</a></li>
-					<li><a href="rentals.html">Rentals</a></li>
-					<li><a href="contact.html">Contact</a></li>
-                    <li class="nav-login"><a href="admin-login.html">Login</a></li>
-				</ul>
-			</nav>
-			<h1>Rentals</h1>
-		</header>
+<body id="rentals" class="catalog-page product-detail-page">
+    <header class="title">
+        <a href="index.html">
+            <img src="Main Images/BE Logo.png" alt="Bill's Equipment & Rentals" class="logo" />
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="rentals.html" aria-current="page">Rentals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-login"><a href="admin-login.html">Login</a></li>
+            </ul>
+        </nav>
+        <h1>Rentals</h1>
+    </header>
 
-        <!-- White Background-->
-		<div class="content-wrapper">
-            <!-- Shopping Cart Link -->
-            <div class="cart-container">
-                <a href="cart.html" class = "cart">
-                    <p class="cart-text">View shopping cart</p>
-                    <span class="material-symbols-outlined cart-icon">shopping_cart</span>
-                </a>
+    <main class="product-detail-main">
+        <a class="product-back-link" href="rentals.html">â† Back to Rentals</a>
+
+        <section id="rentalDetailLoading" class="product-detail-state">
+            <h2>Loading rental...</h2>
+        </section>
+
+        <section id="rentalDetail" class="product-detail-card" hidden>
+            <div class="product-detail-gallery">
+                <div id="rentalMainImage" class="product-main-image"></div>
+                <div id="rentalThumbnails" class="product-thumbnails"></div>
             </div>
-            <!-- Contianer for Flex Boxes -->
-            <div class = "flex-container">
-                <!-- Flex box for Keywords-->
-                <div class = "keywords">
-                    <!-- Content in Keywords Flex Box -->
-                    <div class = "content">
-                        <p style="color: darkgrey;"> Search </p>
-                        <h3> Rentals </h3>
-                        <hr>
-                        <!-- Star Icon Container -->
-                        <div class="star-item">
-                            <span class="material-symbols-outlined"> star </span>
-                            <p> Machines </p>
-                            <div class="arrow-container">
-                                <span class="material-symbols-outlined arrow-up">shift</span>
-                            </div>
-                            <p> A </p>
-                        </div>
-                        <p> Large Machinery </p>
-                        <!-- Star Icon Container -->
-                        <div class="star-item">
-                            <span class="material-symbols-outlined"> star </span>
-                            <p> Tools </p>
-                            <!-- Up Arrow Container -->
-                            <div class="arrow-container">
-                                <span class="material-symbols-outlined arrow-up">shift</span>
-                            </div>
-                            <p> A </p>
-                        </div>
-                        <p> Heldhand or Standing </p>
-                        <!-- Star Icon Container -->
-                        <div class="star-item">
-                            <span class="material-symbols-outlined"> star </span>
-                            <p> Protective Equipment </p>
-                            <!-- Up Arrow Container -->
-                            <div class="arrow-container">
-                                <span class="material-symbols-outlined arrow-up">shift</span>
-                            </div>
-                            <p> A </p>
-                        </div>
-                        <p> Eye protections, gloves, etc. </p>
-                        <hr>
-                        <!-- Star Icon Container -->
-                        <div class="star-item">
-                            <span class="material-symbols-outlined"> star </span>
-                            <p> Cleaning Products </p>
-                            <!-- Up Arrow Container -->
-                            <div class="arrow-container">
-                                <span class="material-symbols-outlined arrow-up">shift</span>
-                            </div>
-                            <p> A </p>
-                        </div>
-                        <p> Menu Description </p>
-                        <!-- Star Icon Container -->
-                        <div class="star-item">
-                            <span class="material-symbols-outlined"> star </span>
-                            <p> Replacement Parts </p>
-                            <!-- Up Arrow Container -->
-                            <div class="arrow-container">
-                                <span class="material-symbols-outlined arrow-up">shift</span>
-                            </div>
-                            <p> A </p>
-                        </div>
-                        <p> Blades and Parts </p>
-                    </div>
-                </div>
-                <!-- Flex box for the Rental -->
-                <div class = "item">
 
+            <div class="product-detail-info">
+                <div id="rentalDetailBadges" class="product-detail-badges"></div>
+                <h2 id="rentalDetailName"></h2>
+                <div id="rentalDetailPrice" class="product-detail-price"></div>
+                <dl id="rentalMeta" class="product-meta"></dl>
+
+                <div class="product-detail-description">
+                    <h3>Description</h3>
+                    <p id="rentalDetailDescription"></p>
+                </div>
+
+                <div class="product-detail-actions">
+                    <a class="catalog-contact-button" href="tel:+19547899459">Call About This Rental</a>
+                    <a class="catalog-secondary-button" href="contact.html">Contact Us</a>
                 </div>
             </div>
-            <!-- Link to go back to rentals page -->
-            <div class = "arrow-back">
-                <a class="search" href="rentals.html">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                    Back to Search
-                </a>
-            </div>
-        </div>
-        <script src="js/site-responsive.js" defer></script>
+        </section>
+
+        <section id="rentalNotFound" class="product-detail-state" hidden>
+            <h2>Rental not found</h2>
+            <p>This rental may have been removed, hidden, or is no longer listed.</p>
+            <a class="catalog-contact-button" href="rentals.html">Browse Rentals</a>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/site-responsive.js" defer></script>
+    <script type="module" src="js/rental-detail.js"></script>
 </body>
 </html>
