@@ -1,0 +1,58 @@
+Bill's Equipment legacy inventory cleanup
+Generated: 2026-09-10 11:49:37
+
+Input candidates: 277
+Import-ready: 187
+Still needs review: 53
+Excluded as non-products / unreliable rows: 37
+
+Import-ready by brand:
+  Wacker: 24
+  Honda: 21
+  ERB Safety: 19
+  Multiquip: 18
+  Gemtor: 14
+  Genie: 11
+  Sullair: 11
+  Bosch: 11
+  Stone: 8
+  Milwaukee: 7
+  Makita: 5
+  Lino Sella: 5
+  NED Corp: 4
+  STIHL: 4
+  Miller: 4
+  EDCO: 4
+  Bil-Jax: 4
+  MBW: 4
+  Spray Force: 4
+  Oztec: 2
+  RoboToolz: 2
+  Kraft Tool: 1
+
+Import-ready by category:
+  Safety Equipment: 38
+  Power Tools: 26
+  Engines: 23
+  Aerial Lifts: 14
+  Generators: 13
+  Compaction Equipment: 12
+  Concrete Mixers: 12
+  Air Compressors & Air Tools: 11
+  Mortar & Plaster Equipment: 8
+  Concrete Vibrators: 7
+  Water Pumps: 6
+  Concrete Finishing: 5
+  Rebar Cutters/Benders: 3
+  Rollers: 3
+  Concrete Pumps: 2
+  Air Compressors: 2
+  Concrete Saws & Cutting: 1
+  Scaffolding: 1
+
+Rules:
+- No data was imported into Supabase.
+- No Git commit or push was performed.
+- All import-ready rows remain Sale/Product.
+- Legacy listings use Call for Price.
+- Rows with generic CTA text or no reliable product identity are excluded instead of guessed.

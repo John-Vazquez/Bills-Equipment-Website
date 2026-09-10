@@ -1,5 +1,5 @@
 Bill's Equipment legacy inventory candidate extraction
-Generated: 2026-09-09 18:52:18
+Generated: 2026-09-09 18:56:44
 
 Candidate rows before dedupe: 322
 Unique candidates after dedupe: 277
