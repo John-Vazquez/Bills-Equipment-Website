@@ -1,0 +1,24 @@
+Bill's Equipment legacy catalog import
+Generated: 2026-09-10 12:35:00
+
+Input rows: 187
+Products inserted: 124
+Already imported: 0
+Skipped because an existing manual product matched: 32
+Rows with errors: 153
+
+Images uploaded: 0
+Images already present: 0
+Rows with no legacy image: 2
+Images skipped by command option: False
+
+Source file:
+C:\Users\speed_ayzysvt\Documents\GitHub\Bills-Equipment-Website\legacy-site-crawl\legacy-inventory-clean.csv
+
+Important:
+- Only legacy-inventory-clean.csv was processed.
+- legacy-inventory-final-review.csv was NOT imported.
+- legacy-inventory-excluded.csv was NOT imported.
+- Existing manual products were not overwritten.
+- Imported legacy rows use external_id values beginning with legacy: so rerunning this script is idempotent.
+- Nothing was committed or pushed to Git.

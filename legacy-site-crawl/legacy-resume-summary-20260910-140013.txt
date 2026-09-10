@@ -1,0 +1,16 @@
+Bill's Equipment legacy catalog resume / repair
+Generated: 2026-09-10 14:00:13
+
+Rows processed: 3
+New products inserted: 0
+Previously imported products reused: 3
+Manual product matches skipped: 0
+Rows with errors: 0
+
+Products with legacy image linked/present: 3
+Rows with no legacy image: 0
+
+Source:
+C:\Users\speed_ayzysvt\Documents\GitHub\Bills-Equipment-Website\legacy-site-crawl\legacy-inventory-clean.csv
+
+Nothing was committed or pushed to Git.
