@@ -1,1 +1,21 @@
-TempDhruv/
+# Local secrets and deployment output
+.env
+.env.*
+!.env.example
+supabase/.env
+supabase/.env.*
+!supabase/.env.example
+node_modules/
+dist/
+*.log
+.bills-update-backups/
+.bills-installed.json
+.bills-local-settings.json
+test-results/
+.vs/
+.DS_Store
+# Private operational exports and CLI-local state
+bills-inventory-*.json
+reconciliation*.json
+supabase/.temp/
+.bills-stage-*.tmp

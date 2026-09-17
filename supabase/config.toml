@@ -1,0 +1,4 @@
+# Bill's Equipment only. Public form has its own CAPTCHA, validation, CORS, rate limits and
+# service-only write RPC. Employee retry action verifies the user JWT inside the handler.
+[functions.bills-enquiries]
+verify_jwt = false
